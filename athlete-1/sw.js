@@ -1,5 +1,5 @@
 // Offline cache for one athlete's app (built per athlete by run.py --dist). Network first, so updates arrive when online.
-const CACHE='climbing-coach-athlete-1-73aaeebcb2ce',PREFIX='climbing-coach-athlete-1-',FILES=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];
+const CACHE='climbing-coach-athlete-1-9e77fbde4baf',PREFIX='climbing-coach-athlete-1-',FILES=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)));self.skipWaiting();});
 // Several athletes' apps can share one origin, so only this app's older caches are removed.
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith(PREFIX)&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
