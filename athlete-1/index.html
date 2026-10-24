@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#142a27"><title>Training · Berdorf</title><style>:root{--bg:#eeeee7;--paper:#fafbf6;--ink:#192d29;--muted:#60716a;--line:#d0d7cb;--accent:#dfef8a;--green:#264d43}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 'Segoe UI',system-ui,sans-serif}header{background:#142a27;color:#f3f4e8;position:sticky;top:0;z-index:3}.wrap{max-width:900px;margin:auto;padding:0 24px}.brand{display:flex;align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:18px;gap:12px}.brand strong{font-size:20px;letter-spacing:.06em}.brand strong span{display:block;font-size:10px;letter-spacing:.19em;color:#aabcac}.pill{font-size:10px;border:1px solid #637366;border-radius:24px;padding:6px 12px;letter-spacing:.06em}nav{display:flex;gap:24px}button,input,select,textarea{font:inherit}button{cursor:pointer}nav button{border:0;border-bottom:3px solid transparent;background:none;color:#b8c6b7;padding:12px 0}nav button[aria-current]{border-color:var(--accent);color:#fff}main{padding-top:28px!important}h1,h2,h3,p{margin:0}h1{font-family:Georgia,serif;font-size:56px;line-height:1.05;font-weight:400;letter-spacing:-.04em}h2{font-size:22px;line-height:1.3}h3{font-size:17px}.hero{border-radius:5px;background:#264d43;color:#f4f4e7;padding:36px;position:relative;overflow:hidden}.hero:after{content:'';position:absolute;width:320px;height:320px;border:1px solid #617a5d;border-radius:45% 55% 30% 70%;right:-120px;top:50px;transform:rotate(-30deg);pointer-events:none}.hero h1{font-size:72px;margin:18px 0}.hero em{color:var(--accent);font-weight:400}.hero p{color:#dce5d0}.eyebrow{font:11px/1.5 Consolas,monospace;letter-spacing:.13em}.hero-bottom{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;border-top:1px solid #597264;padding-top:20px;margin-top:30px}.section-head{display:flex;align-items:center;justify-content:space-between;margin:28px 0 16px;gap:14px}.section-head label{display:flex;align-items:center;gap:10px;font-size:12px}.callout{border-left:3px solid #678448;background:#e2e9d6;padding:14px 18px;margin:14px 0}.muted{color:var(--muted);font-size:14px}article{background:var(--paper);border:1px solid var(--line);border-radius:5px;margin:16px 0;padding:24px;display:grid;gap:16px}.session-title{display:flex;justify-content:space-between;align-items:start;gap:12px}.session-id{font:28px Georgia,serif;background:#dfe7d5;border-radius:50%;width:48px;height:48px;text-align:center;line-height:48px;flex-shrink:0}.tag{font:11px/1.4 Consolas,monospace;letter-spacing:.06em;color:var(--muted);margin-bottom:6px}.step{display:grid;grid-template-columns:140px 1fr;gap:16px;border-top:1px solid var(--line);padding-top:14px}.dose{font:14px Consolas,monospace;color:var(--green);margin-top:5px}.page-head{padding:20px 0}.page-head h1{margin:12px 0 20px}form{display:grid;gap:16px}label{display:grid;gap:6px;font-size:14px;font-weight:500}input,textarea,select{border:1px solid #b6c3b6;border-radius:4px;padding:10px;background:#fff;color:var(--ink);width:100%;min-width:0}textarea{resize:vertical}.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}button,.file-button{border:1px solid #9aae9a;border-radius:4px;background:#f0f2e9;color:var(--ink);padding:10px 16px;min-height:44px}.primary{background:var(--green);color:#fff;border-color:var(--green);justify-self:start}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:var(--paper);padding:20px;border:1px solid var(--line);border-radius:5px}.stat b{display:block;font:32px Georgia,serif}.stat span{font-size:12px;color:var(--muted)}.actions{display:flex;gap:12px;flex-wrap:wrap}.file-button{cursor:pointer;display:inline-flex;align-items:center}.file-button input{width:180px;font-size:12px}#notice:not(:empty){background:#e1ebca;border:1px solid #9caf89;padding:12px;margin-bottom:16px}.history-meta{font:12px Consolas,monospace;color:var(--muted)}.notes{white-space:pre-wrap;overflow-wrap:anywhere}a{color:#285c48}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #91ac47;outline-offset:3px}[hidden]{display:none!important}footer{font-size:11px;letter-spacing:.04em;padding-top:28px!important;padding-bottom:30px!important;display:flex;justify-content:space-between;gap:15px;color:var(--muted)}@media(max-width:600px){.wrap{padding-left:16px;padding-right:16px}.brand strong{font-size:16px}.pill{font-size:9px;padding:5px 8px}nav{gap:0;justify-content:space-between}nav button{font-size:14px}.hero{padding:26px 22px}.hero h1{font-size:56px}.hero-bottom{gap:8px 16px}.section-head{align-items:start;flex-direction:column}h1{font-size:44px}.step{grid-template-columns:1fr;gap:7px}article{padding:20px}.stats{gap:8px}.stat{padding:12px}.stat b{font-size:27px}.fields{gap:12px}footer{flex-direction:column}.file-button{flex-wrap:wrap}.file-button input{width:100%}}
+
+.checklist-hero{padding:24px 28px}.checklist-hero h1{font-size:44px;margin:10px 0 12px}.checklist-hero:after{display:none}.check-date{max-width:240px;margin-bottom:12px}.session-box{gap:12px}.tick-box{border:1px solid #b9c7b3;border-radius:5px;background:#fff;padding:14px 16px}.tick-label{display:flex;align-items:center;gap:14px;cursor:pointer}.tick-label input{appearance:auto;accent-color:var(--green);width:24px;height:24px;flex:0 0 24px;cursor:pointer}.tick-label strong{font-size:17px}.tick-label .dose{display:block;font-size:13px;font-weight:400}.tick-box details{margin-left:38px;margin-top:8px;font-size:14px;color:var(--muted)}.tick-box summary{cursor:pointer;min-height:28px}.tick-box details p{padding:6px 0}.tick-box.is-done{background:#e6eedb;border-color:#7e9b64}.tick-box.is-done strong{text-decoration:line-through;text-decoration-color:#90a478}@media(max-width:600px){.checklist-hero h1{font-size:36px}.checklist-hero{padding:22px}.tick-box{padding:12px}.tick-label strong{font-size:16px}}
+/* Minimal navigation and plain training content. */
+header{background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}nav{gap:28px}nav button{color:var(--muted);border-radius:0;padding:16px 0}nav button[aria-current]{color:var(--ink);border-bottom-color:var(--green)}.goal-line{font-size:14px;color:var(--muted);margin:0 0 18px}.section-head{margin-top:12px}.page-head{padding-top:0}.page-head h1{font:500 30px/1.2 'Segoe UI',system-ui,sans-serif;letter-spacing:0;margin:0 0 14px}.session-box{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:22px 0;margin-top:24px}.session-id{background:transparent;border:1px solid var(--line);border-radius:4px;width:36px;height:36px;font:500 16px/34px 'Segoe UI',system-ui,sans-serif}.session-title h2{font-size:20px}.callout{background:transparent;border-left:2px solid #9aaf8b;padding:8px 14px;font-size:14px}article{box-shadow:none}main{padding-bottom:36px!important}@media(max-width:600px){nav{gap:0}}
+.finger-checks{border-block:1px solid var(--line);padding:14px 0;display:grid;gap:10px}.symptom-panel{background:var(--paper);padding:12px;border-radius:4px}.symptom-panel>summary{cursor:pointer;font-weight:600;min-height:32px}.tap-scale{border:0;padding:0;margin:14px 0;min-width:0}.tap-scale legend{font-size:14px;font-weight:600;margin-bottom:8px}.scale-buttons{display:flex;flex-wrap:wrap;gap:6px}.scale-buttons button{min-width:44px;min-height:44px;padding:8px;flex:0 0 44px;background:#fff}.scale-buttons button[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green);outline:2px solid #8da38b;outline-offset:1px}.tap-scale p{margin-top:8px;font-size:12px}.rpe-dialog{max-width:540px;width:calc(100% - 32px);border:1px solid var(--line);border-radius:8px;padding:24px;color:var(--ink);background:var(--paper)}.rpe-dialog::backdrop{background:#142a2780}.rpe-dialog h2{margin-bottom:10px}.rpe-dialog button:disabled{opacity:.45;cursor:default}.target-rpe,.actual-rpe{font-size:13px;margin:6px 0 0 38px;color:var(--muted)}.actual-rpe{font-weight:600;color:var(--green)}.symptom-advice{font-size:13px;color:var(--muted)}.tracking-row{border-top:1px solid var(--line);padding:14px 0}.tick-box>button{margin:8px 0 0 38px;font-size:13px}
+.session-meta{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}.session-meta span:last-child{white-space:nowrap;font-family:Consolas,monospace}
+.schedule-block,.schedule-week,.schedule-session{border:1px solid var(--line);border-radius:4px;padding:14px;margin:12px 0;background:var(--paper)}.schedule-block>summary,.schedule-week>summary,.schedule-session>summary{cursor:pointer;font-weight:600;min-height:32px}.schedule-week{margin-left:8px}.schedule-session{margin-left:8px}.schedule-exercise{padding:12px 0;border-top:1px solid var(--line)}.schedule-exercise p{font-size:14px;margin-top:6px}nav{justify-content:space-between;gap:12px}@media(max-width:600px){nav button{font-size:12px}nav{gap:10px}}
+.day-intro{min-height:65vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:18px;max-width:620px;margin:auto}.day-intro h1,.checkin-step h1{font:500 34px/1.2 'Segoe UI',system-ui,sans-serif;letter-spacing:-.02em}.day-intro p{max-width:530px}.start-training{background:var(--green);color:#fff;border:0;font-size:22px;min-width:240px;min-height:80px;margin-top:24px;border-radius:8px}.session-code{font:13px Consolas,monospace;background:transparent;padding:8px 10px}.checkin-step{min-height:65vh;display:flex;flex-direction:column;justify-content:center;gap:22px;max-width:600px;margin:auto}.checkin-step .tap-scale{margin:0}.session-choice{display:block;width:100%;text-align:left;margin:12px 0}.note-question{border:0;padding:0;margin:20px 0}.note-question legend{font-weight:600;margin-bottom:10px}.note-options{display:grid;gap:8px}.note-options button{text-align:left}.note-options button[aria-pressed="true"]{background:var(--green);color:#fff}.note-question textarea{margin-top:10px}.rpe-dialog{max-height:90vh;overflow-y:auto}#sessions{display:grid;gap:16px}#sessions>.tick-box{margin:0}button:disabled{opacity:.45;cursor:default}
+.training-clock{font:24px Consolas,monospace;font-variant-numeric:tabular-nums;color:var(--muted);text-align:center;margin:0}.recorded-time{font:24px Consolas,monospace;margin:16px 0}
+.exercise-instructions{font-size:14px;line-height:1.6;color:var(--muted);margin:12px 0 0 38px}@media(max-width:600px){.exercise-instructions{margin-left:0}}
+.quit-session{justify-self:end;background:transparent;color:#805047;border-color:#cdbbb1;font-size:13px}.rpe-dialog>button{margin:12px 8px 0 0}
+.landing-progress{width:100%;margin:12px 0 30px}.landing-progress h2{font-size:16px;margin-bottom:12px}.day-intro{min-height:50vh}
+.weekly-chart,.symptom-indicators{border-top:1px solid var(--line);padding-top:22px;margin-top:24px}.weekly-chart svg{width:100%;height:auto;display:block;margin:12px 0}.weekly-chart>.muted,.symptom-indicators>.muted{font-size:12px}.severity-row{margin:20px 0}.severity-label,.severity-anchors{display:flex;justify-content:space-between;gap:14px;font-size:14px}.severity-track{height:14px;border-radius:20px;background:linear-gradient(90deg,#55ad70 0%,#a4c766 25%,#f1a73c 50%,#e57a3d 75%,#cd4248 100%);margin:12px 8px;position:relative}.severity-marker{position:absolute;top:50%;transform:translate(-50%,-50%);width:20px;height:24px;border:3px solid var(--ink);border-radius:5px;background:#ffffffc9;box-shadow:0 0 0 2px var(--paper)}.severity-track.no-reading{background:#d0d7cb}.severity-anchors{font-size:11px;color:var(--muted)}.severity-row>.muted{font-size:11px;margin-top:6px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.tick-box{position:relative}.tick-box .tick-label{padding-right:116px}.exercise-clock{position:absolute;top:12px;right:12px;font:15px/1.4 Consolas,monospace;color:var(--ink);padding:5px 8px;border-radius:5px;font-variant-numeric:tabular-nums}.exercise-clock:empty{display:none}.exercise-clock.is-resting{background:#d9efff;color:#205779;border:1px solid #a9d5f2}.exercise-timer-controls{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin:12px 0 0 38px}.exercise-timer-controls:empty{display:none}.exercise-timer-controls label{font-size:12px}.exercise-timer-controls select{padding:8px;min-height:44px}.rest-control{background:#d9efff;color:#205779;border-color:#a9d5f2}@media(max-width:600px){.exercise-timer-controls{margin-left:0}.tick-box .tick-label{padding-right:104px}.exercise-clock{font-size:13px;right:8px}}
+.week-export-button{display:block;width:100%;margin-top:24px;padding:14px;background:var(--green);border-color:var(--green);color:#fff}
+#sessions>.tick-box{padding-top:68px;padding-bottom:70px}.exercise-start{position:absolute;top:12px;left:12px;margin:0;min-width:82px}.exercise-complete{position:absolute;bottom:12px;right:12px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer}.exercise-complete input{width:27px;height:27px;margin:0;accent-color:var(--green);cursor:pointer}.tick-box .tick-label{padding-right:0}.exercise-clock{top:16px}.tick-box .exercise-instructions{margin-left:0}.exercise-timer-controls{margin-left:0}.exercise-timer-controls:has(>.exercise-start:only-child){margin:0}
+#sessions>.tick-box{padding-top:48px}.exercise-start{top:auto;bottom:12px;left:12px}
+#sessions>.tick-box{padding-top:16px}.tick-box .tick-label{align-items:flex-start;padding-right:116px}.exercise-clock{top:12px}.tick-box>button.exercise-skip{position:absolute;bottom:12px;left:106px;right:auto;margin:0;min-height:44px;padding:10px 14px}.tick-box .tick-label strong{display:block}@media(max-width:600px){.tick-box .tick-label{padding-right:104px}}
+#sessions>.tick-box .target-rpe,#sessions>.tick-box .actual-rpe{margin-left:0}
+.grade-options{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.grade-options button[aria-pressed="true"]{background:var(--green);color:#fff}.block-review-button{margin:14px 0;display:block}.metrics-table-wrap{overflow-x:auto;margin:16px 0}.metrics-table{width:100%;border-collapse:collapse;min-width:620px;font-size:12px}.metrics-table th,.metrics-table td{padding:9px;border:1px solid var(--line);text-align:left;vertical-align:top}.metrics-table th{background:#e3e9dc}.progression-note{font-size:13px;background:#e5eadf;border-left:2px solid var(--green);padding:12px}
+</style><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Climbing"></head>
+<body><header><nav class="wrap" aria-label="Main navigation"><button data-tab="train" aria-current="page">Train</button><button data-tab="schedule">Schedule</button></nav></header>
+<main class="wrap"><div id="notice" role="status" aria-live="polite"></div>
+<section id="train"><div id="sessions"></div><article hidden><h2>Log a session</h2><p class="muted">Record how your session went.</p><form id="log-form"><div class="fields"><label>Date<input name="date" type="date" required></label><label>Session<select name="session"><option>A</option><option>B</option><option>C</option></select></label><label>Minutes<input name="minutes" type="number" min="1" max="360" required></label><div><input name="rpe" type="hidden" value=""><div id="log-rpe-scale"></div></div><label>Finger/elbow pain / 10<input name="pain" type="number" min="0" max="10" required></label><label>Ankle pain / 10<input name="ankle" type="number" min="0" max="10" required></label><label>Enjoyment / 5<input name="enjoyment" type="number" min="1" max="5" required></label><label>Quality<select name="quality"><option value="good">Good / controlled</option><option value="mixed">Mixed</option><option value="poor">Dropped noticeably</option></select></label></div><label>What happened?<textarea name="notes" rows="3" maxlength="4000" placeholder="Problem/circuit reference, grade, attempts, completed time, pump, rests, technical cue…" required></textarea></label><button class="primary">Save session</button></form></article></section>
+<section id="schedule" hidden><div id="schedule-tree"></div></section>
+
+<section id="setup" hidden><div class="page-head"><h1>Your setup</h1><p>Changes stay in this browser. Export a backup to share with your coach or move devices.</p></div><article><form id="profile-form"><label>Name<input name="name" maxlength="100" required></label><div class="fields"><label>Availability<select name="availability"><option value="2">2 bouldering sessions only</option><option value="3">2 bouldering + 1 regular gym</option></select></label><label>Trip date (optional)<input type="date" name="date"></label></div><label>Current level & recent workload<textarea name="current" rows="3" maxlength="2000" placeholder="Comfortable and challenging grades; sessions/week over the last month"></textarea></label><label>Time, equipment & rope access<textarea name="access" rows="3" maxlength="2000"></textarea></label><label>Recovery, ankle & other limitations<textarea name="recovery" rows="3" maxlength="2000"></textarea></label><button class="primary">Save setup</button></form></article><article><h2>Training days</h2><p class="muted">Choose when week 1 starts, then your usual training days.</p><form id="calendar-form"><label>Week 1 starts<input name="start" type="date" required></label><div id="calendar-days" class="fields"></div><button class="primary">Save training days</button></form></article><article><h2>Keep your data</h2><p class="muted">No account or cloud sync. Logs and notes belong to this browser and device. Clearing site data may remove them. Backups include training and health notes.</p><div class="actions"><button id="export">Export backup</button><label class="file-button">Import backup<input id="import" type="file" accept="application/json,.json"></label></div></article></section>
+</main><script>const PROGRAM = {"app": {"id": "athlete-1", "name": "Climbing Coach", "shortName": "Climbing", "storageKey": "climbing-coach-berdorf-v1"}, "athlete": {"name": "", "pastSport": "", "pastBoulder": "", "current": "", "availability": "2 bouldering-gym sessions + 1 regular-gym session", "ankle": "", "strength_reference": "", "finger_history": "", "equipment": "Tindeq Progressor strain gauge (peak force, target-force isometrics).", "access": "", "tindeq": {"edgeMm": 18, "setup": "one-arm overhead pull-down, 18 mm rounded edge"}}, "strengthRefs": {}, "goal": {"route": "Hasta la Vista Gringo", "location": "Berdorf", "grade": "Your goal: 8a+/b; public listings: 8b", "season": "Autumn 2027", "date": "2027-12-09"}, "sessions": [{"id": "A", "title": "Boulder", "duration": "80\u2013100 min \u00b7 Bouldering gym", "aim": "Develop difficult moves and movement quality with full rests. Use your current level as context; choose problems by how they feel today.", "steps": [["Prepare", "20 min", "4 min pulse raise and 2 \u00d7 10 band external rotations and scapular pulls. 2 min finger mobility (open and close your fists, rubber-band extensions). On the wall, climb about 8 problems in ascending order: jugs, then big edges and slopers, then open-hand and half-crimp holds, then 1\u20132 flash-level problems. Avoid small crimps and pockets until the last stage. Finish with 2\u20133 progressively harder tries (50%, 70%, 90%) on single moves of today's hard problem. If you feel any finger pain here, follow the HOLD or REGRESS rule before the hard block."], ["Hard bouldering", "35\u201345 min \u00b7 6\u20138 attempts", "Choose 2\u20133 hard problems or short sequences. Take 6\u20138 quality attempts in total and rest 3\u20135 minutes between demanding attempts. Work on one clear change at a time, such as foot placement, body position or timing. Finish the block when repeated attempts lose quality. Prefer open-hand, half-crimp, slopers and big pockets; no monos or small crimps in this block. Count only committed attempts at RPE 7 or above; warm-up tries belong in Prepare."], ["Easy movement", "Optional \u00b7 8\u201310 min", "Climb easy low problems or traverses. Practise precise feet, relaxed grip and steady breathing. Keep forearm pump very low. Skip this block if you are tired or short of time."], ["Climbing notes", "3\u20135 min", "Answer the short questions about your moves, what limited your attempts and how your movement quality held up. Choose Other if you want to add a detail."], ["Bench press", "2 x 5\u20138", "Warm up with lighter sets. Set your feet, keep your upper back supported and lower the bar under control to your chest. Press back up without bouncing. Choose a weight that leaves 2\u20133 clean reps in reserve and rest 2\u20133 minutes between work sets. Record your actual weight and reps. Use the next eligible load only when effort, recovery and the four-week total load budget allow it."]], "targetRpe": ["2\u20134", "8\u20139", "2\u20133", null, "7\u20138"]}, {"id": "B", "title": "Endurance", "duration": "65\u201385 min \u00b7 Bouldering gym", "aim": "Assess current endurance and recovery, then develop links. Compare sustained-climbing capacity with hard-move ability.", "steps": [["Prepare", "15\u201320 min", "Pulse raise, band shoulder work and finger mobility as on Boulder day. Then climb 6 easy problems or 1\u20132 easy routes, ending with 2 minutes on the circuit's own holds at half speed."], ["Repeatable capacity circuit", "3 \u00d7 3 min \u00b7 rest 3 min", "Climb continuously for 3 minutes, then rest for 3 minutes. Repeat for 3 bouts. Choose easy moves that produce only a light, manageable forearm pump. Reduce the difficulty or use 2-minute bouts if your movement breaks down. In week 3, add a fourth bout only if all three remain controlled and you recover well."], ["Efficiency & linking review", "10\u201315 min", "On easy terrain, practise relaxing your grip, breathing and shaking out one arm at a time, and find positions where your feet carry more weight. With rope access, use easy routes for the circuit and practise clipping from good and poor stances, resting, and 2\u20134 short controlled falls."], ["Climbing notes", "3\u20135 min", "Answer the short questions about completed bouts, forearm pump and recovery between efforts. Choose Other if you want to add a detail."], ["Overhead press", "2 x 5\u20138", "Warm up with lighter sets. Stand with your feet steady, brace your trunk and start with the bar at shoulder height. Press overhead while keeping the bar close and avoiding a large backward lean. Lower under control. Leave 2\u20133 clean reps in reserve and rest 2\u20133 minutes between sets."]], "targetRpe": ["2\u20134", "3\u20134", "2\u20133", null, "7\u20138"]}, {"id": "C", "title": "S&C", "duration": "45\u201360 min \u00b7 Regular gym", "aim": "Build your leg strength, trunk control and general fitness alongside your two climbing days. Introduce new exercises gradually so you recover well for climbing.", "steps": [["Prepare", "8\u201310 min", "Cycle or row easily for 6\u20138 minutes, then do progressively heavier leg-press warm-up sets. Before the finger edge lift, ramp on the Tindeq: 2 \u00d7 5 s each at about 30%, 50% and 70% of today's target force per hand, 20 s apart."], ["Leg press", "2 x 5\u20138", "Use your usual machine. Place your feet firmly on the platform and keep your pelvis and back supported. Lower under control through a comfortable range, then press smoothly without snapping your knees straight. Leave 2\u20133 clean reps in reserve and rest 2\u20133 minutes between work sets. Compare loads on the same machine."], ["Hip hinge or unilateral legs", "1 \u00d7 6\u20138 \u00b7 progress from actual reps", "Choose one exercise. For a dumbbell Romanian deadlift, keep your knees slightly bent, push your hips back and keep the weights close before standing tall. For a supported split squat, hold a support, lower vertically with a steady front foot, then push back up. Start with one set in week 1. Change sets, reps or weight only within your recorded monthly dose cap. Leave about 3 clean reps in reserve. Prefer the supported split squat so your grip stays fresh for the finger edge lift; if you choose the Romanian deadlift, use straps."], ["Trunk control", "2 \u00d7 6\u201310 per side", "Choose a dead bug or Pallof press. For a dead bug, keep your trunk steady while slowly extending the opposite arm and leg, then switch sides. For a Pallof press, stand side-on to a cable or band and press your hands forward without rotating. Breathe steadily and rest about 60 seconds between sets."], ["Finger edge lift", "Optional \u00b7 2 \u00d7 4 holds per hand", "Only on symptom-free days (pain 0, stiffness 0). Tindeq Progressor on your usual edge and set-up, identical every time; one straight arm, shoulder engaged, neutral wrist. Alternate hands. Each hold: ramp smoothly to the target force and hold 10 s; about 50 s before the same hand works again. Alternate half crimp (index to ring finger, thumb off) and four-finger open-hand drag. Choose a force that feels clearly easy (you could hold it 20 s or more longer). Record the target force per hand as kg and holds per hand as reps. Stop and skip the rest at any finger pain."], ["Record", "5 min", "Answer the short questions about your lifting and technique. Use Other if you want to add your weights, sets, reps or another detail."]], "targetRpe": ["2\u20133", "7\u20138", "6\u20137", "5\u20136", "3\u20134", null]}], "phases": [["Blocks 1\u20132 \u00b7 Oct\u2013Dec 2026", "Base / return", "Establish loads, build capacity and finger tolerance with submaximal Tindeq loading. First peak-force test 13 Dec."], ["Blocks 3\u20135 \u00b7 Jan\u2013Mar 2027", "Strength / power", "Limit bouldering at a controlled block RPE, finger slot 55\u219280% of tested peak, capacity then aerobic power on Endurance, rope sessions."], ["Blocks 6\u20138 \u00b7 Apr\u2013Jun 2027", "Power-endurance & route learning", "Linked-boulder and route-like circuits; Berdorf reconnaissance (Easter or Ascension); rock days replace Endurance."], ["Blocks 9\u201311 \u00b7 Jun\u2013Sep 2027", "Refresh & route-specific", "Train the limiter found on the route; route-duration links and full-route simulations."], ["Blocks 12\u201314 \u00b7 Sep\u2013Dec 2027", "Peak, try, send", "Taper (volume \u221240\u201360%, intensity kept), then project attempts with maintenance gym sessions. A send remains a goal, not a prediction."]], "sources": [["Route listing \u00b7 theCrag", "https://www.thecrag.com/en/climbing/luxembourg/berdorf/route/566078139"], ["Route listing \u00b7 The Topo", "https://thetopo.com/crags/berdorf-in-luxembourg/routelist"], ["Lattice \u00b7 endurance principles", "https://latticetraining.com/blog/training-series-endurance"], ["BMC \u00b7 training principles", "https://services.thebmc.co.uk/climb-skills-how-to-start-training"], ["NHS \u00b7 joint pain, swelling and when to seek assessment", "https://www.nhs.uk/symptoms/joint-pain/"], ["Lattice \u00b7 finger strength / Tindeq protocols", "https://latticetraining.com/blog/"]], "strength_notes": "Build through reps or small weight steps when effort and recovery support it; bodyweight work can progress through reps. Deload by about half of the latest build-week reps. The four-week sum, including deload, must stay within 110% of the previous block total. There is no separate 10% weekly or working-weight ceiling.", "weekNotes": {"1": "Baseline: establish controlled attempts, circuit tolerance and repeatable lifting loads. Record effort and finger response.", "2": "Build: if recovered, add a quality attempt, wall time or a small rep step. A weekly increase can exceed 10%; the four-week total is the capped quantity.", "3": "Build: use the next volume step or eligible weight increase only with controlled effort, recovery and stable fingers. Keep room in the block budget for the deload.", "4": "Deload: about half the latest build-week volume at easier effort. This week counts toward the block total. Complete your review before starting block 2. Peak-force tests (blocks 2, 4, 6, 9, 11) fall on this week's Sunday."}, "calendar": {"days": {"A": 5, "B": 2, "C": 0}, "start": "2026-10-23"}, "pauses": [{"start": "2026-12-18", "end": "2027-01-07", "tripEnd": "2027-01-03", "title": "Christmas climbing trip", "review": true}], "progression_policy": "Three build weeks then a deload. Weeks may increase by more than 10% within a block. The total of the next four-week block, including its deload, must stay within 110% of the previous actual block total, individually, by category and combined. Block 1 establishes the first monthly baseline. Boulder uses attempts \u00d7 RPE; Endurance uses actual wall minutes \u00d7 RPE; S&C uses kg \u00d7 reps or bodyweight reps \u00d7 RPE. Progression still depends on symptoms, effort and recovery. Missing baselines do not authorize extra work.", "load_policy": {"categories": ["Boulder", "Endurance", "S&C"], "monthlyCeiling": 1.1, "windowDays": 28, "comparison": "Consecutive four-week training blocks, including all build and deload weeks. Block 1 establishes the baseline.", "combined": "Normalize exercise units using fixed first-observed-block denominators; sum contributions within categories and combined. Compare each new block total with the immediately previous block total. Also track the whole-session minutes \u00d7 RPE total.", "individual": "Cap total exercise dose per four-week block, not individual weeks or working kg. Reserve a share of remaining capacity for later weeks and the deload. Actual excesses stay recorded and are flagged."}, "blocks": [{"number": 1, "start": "2026-10-23", "title": "Base / return: assess & establish", "status": "active", "theme": "Re-establish hard moves submaximally, measure circuit tolerance, set lift weights, start low-intensity finger loading. Baseline for every cap.", "intensity": {"A:1": 8, "B:1": 3}, "gate": {"B:1": 4}, "strengthSchemes": {"C:4": {"weeks": ["2 \u00d7 4", "5 + 4", "2 \u00d7 5", "1 \u00d7 5"], "targetRpe": "3\u20134", "restSec": 50}}}, {"number": 2, "start": "2026-11-20", "title": "Base 2: capacity & tissue tolerance", "status": "active", "theme": "Small volume rise within the cap, Berdorf-style hold variety, first rope session, finger slot at RPE 4\u20135, first Tindeq peak-force test on Sun 13 Dec.", "intensity": {"A:1": 8, "B:1": 3}, "gate": {"B:1": 4}, "stepOverrides": {"A": {"1": {"detailAppend": "This block: choose one sloper or compression problem, one half-crimp problem on edges of 15 mm or more, and one steep problem on pockets or horizontal breaks. At most 2 full-crimp moves per session, symptom-free days only."}, "2": {"name": "Easy movement", "detail": "Footwork and sandstone skills: smears on volumes, high feet, rockovers and mantles. Downclimb where possible. Keep pump very low; skip if tired."}}}, "targetRpe": {"C:4": "4\u20135"}, "strengthSchemes": {"C:4": {"weeks": ["2 \u00d7 4", "5 + 4", "2 \u00d7 5", "1 \u00d7 5"], "targetRpe": "4\u20135", "restSec": 60}}, "tests": [{"date": "2026-12-13", "session": "C", "step": 4, "type": "peakForce"}]}, {"number": 3, "start": "2027-01-08", "title": "Strength / power 1", "status": "active", "theme": "Starts after the Christmas climbing trip. Limit moves on the Boulder day at a whole-block RPE of 8; capacity endurance maintained; finger slot at 55\u201360% of tested peak.", "intensity": {"A:1": 8, "B:1": 3}, "gate": {"B:1": 4}, "stepOverrides": {"A": {"1": {"detail": "Limit bouldering: 2 problems or isolated 2\u20135-move sections at or just above your current maximum, done fresh. Commit fully to each attempt but rate the whole block about 8; a 9 means repeat next week. Include one half-crimp sequence on 12\u201320 mm edges on symptom-free days; keep the rest steep and powerful on good holds. Rest 4\u20135 minutes between attempts. Stop at any finger pain."}, "2": {"name": "Easy movement", "dose": "Optional \u00b7 8\u201310 min", "detail": "Power on good holds: 4\u20136 deadpoints or small dynos on jugs only, with full rest between. Or easy movement if you prefer. Keep effort at 3 or below."}}}, "targetRpe": {"C:4": "5\u20136"}, "strengthSchemes": {"C:4": {"weeks": ["2 \u00d7 3", "4 + 3", "2 \u00d7 4", "1 \u00d7 4"], "targetRpe": "5\u20136", "restSec": 120, "targetPctPeak": [55, 60], "maxRiseVsPrevBlock": 0.15}}, "weekNotes": {"1": "First week back after the trip: use the after-trip questionnaire advice, keep week 1 at its establish dose, and only progress once check-ins show 0 pain and 0 stiffness."}}, {"number": 4, "start": "2027-02-05", "title": "Strength / power 2", "status": "draft", "theme": "Limit + power; aerobic intervals introduced on Endurance (RPE 3\u21924); finger slot 65\u201370% of peak; retest 28 Feb.", "tests": [{"date": "2027-02-28", "session": "C", "step": 4, "type": "peakForce"}]}, {"number": 5, "start": "2027-03-05", "title": "Strength / power 3 + aerobic power", "status": "draft", "theme": "Crimp-specific limit bouldering on symptom-free days; aerobic power intervals RPE 4\u20135; at least 2 rope sessions; finger slot 70\u201380%; book recon."}, {"number": 6, "start": "2027-04-02", "title": "Power-endurance 1", "status": "draft", "theme": "Linked-boulder PE intervals RPE 5\u20136; hard bouldering maintained; finger slot maintained; retest 25 Apr.", "tests": [{"date": "2027-04-25", "session": "C", "step": 4, "type": "peakForce"}]}, {"number": 7, "start": "2027-04-30", "title": "Power-endurance 2 + reconnaissance", "status": "draft", "theme": "Route-like circuits 25\u201340 moves RPE 6; rope sessions; Berdorf recon in deload or Ascension weekend.", "tests": [{"date": "2027-05-02", "session": "C", "step": 4, "type": "criticalForce", "optional": true}]}, {"number": 8, "start": "2027-05-28", "title": "Outdoor performance & route learning", "status": "draft", "theme": "Rock days replace Endurance; crux-replica boulders; second Berdorf visit."}, {"number": 9, "start": "2027-06-25", "title": "Strength / power refresh", "status": "draft", "theme": "Train the limiter found on the route; finger slot 75\u201385% in the crux grip; retest 18 Jul.", "tests": [{"date": "2027-07-18", "session": "C", "step": 4, "type": "peakForce"}]}, {"number": 10, "start": "2027-07-23", "title": "Route-specific 1", "status": "draft", "theme": "Route-duration links at route intensity; crux sequences fresh.", "tests": [{"date": "2027-07-25", "session": "C", "step": 4, "type": "criticalForce", "optional": true}]}, {"number": 11, "start": "2027-08-20", "title": "Route-specific 2", "status": "draft", "theme": "Full-route simulations; rehearsal day if conditions allow; retest 12 Sep.", "tests": [{"date": "2027-09-12", "session": "C", "step": 4, "type": "peakForce"}]}, {"number": 12, "start": "2027-09-17", "title": "Peak / taper", "status": "draft", "theme": "Keep intensity; cut volume 40\u201360% in weeks 3\u20134; lifts to maintenance."}, {"number": 13, "start": "2027-10-15", "title": "Season: attempts", "status": "draft", "theme": "Project days replace gym climbing; one short gym session per week; S&C maintenance."}, {"number": 14, "start": "2027-11-12", "title": "Season: attempts \u2192 transition", "status": "draft", "theme": "Attempts, then two easy weeks and review."}]};
+</script><script>(function(root){
+ // Paused periods (e.g. a climbing trip) belong to no training week or block: the calendar resumes after them.
+ // Pauses come from calendar.pauses, else PROGRAM.pauses; each spans whole weeks so session weekdays keep their order.
+ const day=86400000,parse=d=>Date.parse(d+'T00:00:00Z'),iso=t=>new Date(t).toISOString().slice(0,10);
+ function pauses(calendar){const list=calendar?.pauses||(typeof PROGRAM!=='undefined'&&PROGRAM.pauses)||[];return [...list].sort((a,b)=>a.start.localeCompare(b.start));}
+ function pauseAt(calendar,date){return pauses(calendar).find(p=>date>=p.start&&date<=p.end)||null;}
+ // Training days since calendar.start, not counting paused days. A paused date maps to the day its pause began.
+ function elapsed(calendar,date){let n=Math.floor((parse(date)-parse(calendar.start))/day);for(const p of pauses(calendar)){if(date<p.start)break;n-=(Math.min(parse(date),parse(p.end)+day)-parse(p.start))/day;}return n;}
+ function dateAt(calendar,n){let t=parse(calendar.start)+n*day;for(const p of pauses(calendar))if(t>=parse(p.start))t+=parse(p.end)+day-parse(p.start);return iso(t);}
+ function weekIndex(calendar,date){return Math.floor(elapsed(calendar,date)/7);}
+ function weekStart(calendar,date){return dateAt(calendar,Math.max(0,weekIndex(calendar,date))*7);}
+ function valid(p){return !!(p&&/^\d{4}-\d{2}-\d{2}$/.test(p.start)&&/^\d{4}-\d{2}-\d{2}$/.test(p.end)&&p.end>=p.start&&((parse(p.end)-parse(p.start))/day+1)%7===0);}
+ const api={pauses,pauseAt,elapsed,dateAt,weekIndex,weekStart,valid};if(typeof module!=='undefined')module.exports=api;else root.TrainingTime=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>(function(root){
+'use strict';
+function review(logs,now){const today=now||new Date();const day=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');const recent=logs.filter(x=>{const age=(today-new Date(x.date+'T12:00:00'))/86400000;return x.date<=day&&age>=-1&&age<14;}).sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id));if(!recent.length)return 'Start with two weeks of honest logs. Establish hard-move benchmarks and sustained-climbing tolerance before increasing training.';if(recent.some(x=>x.pain>0||x.ankle>0))return 'Pain appears in your logs from the last 14 days. Do not progress painful work. Review affected movements and recovery; persistent or recurring symptoms need assessment by an appropriate clinician.';if(recent.slice(0,2).some(x=>x.rpe>=9||x.quality==='poor'))return 'Your recent sessions were very hard or lost quality. Repeat at an easier level or reduce volume. Reduce supplementary gym work until recovered.';if(recent.length<4)return 'Keep the two core sessions consistent. Repeat the same benchmarks before adding work. There is no need to make up missed sessions.';return 'Review comparable circuit times, movement and recovery with your coach. If the work is controlled and recovery is good, change just one variable next block. Review week 4 from recovery and performance; no automatic increase.';}
+function validTracking(x){
+ const map=v=>v&&typeof v==='object'&&!Array.isArray(v)&&Object.keys(v).length<=10000;
+ const date=k=>/^\d{4}-\d{2}-\d{2}$/.test(k)&&!isNaN(Date.parse(k))&&new Date(k).toISOString().slice(0,10)===k;
+ const int=(v,max)=>Number.isInteger(v)&&v>=0&&v<=max;
+ if(x.exerciseRpe!==undefined&&(!map(x.exerciseRpe)||!Object.entries(x.exerciseRpe).every(([k,v])=>/^\d{4}-\d{2}-\d{2}:[ABC]:[0-5]$/.test(k)&&date(k.slice(0,10))&&int(v,10))))return false;
+ if(x.fingerReports!==undefined&&(!map(x.fingerReports)||!Object.entries(x.fingerReports).every(([k,v])=>/^\d{4}-\d{2}-\d{2}:[ABC]$/.test(k)&&date(k.slice(0,10))&&map(v)&&Object.entries(v).every(([phase,data])=>['before','after'].includes(phase)&&map(data)&&Object.entries(data).every(([metric,n])=>['pain','stiffness','swelling'].includes(metric)&&int(n,metric==='swelling'?3:10))))))return false;
+ return true;
+}
+function fingerMessage(report){
+ const pre=report.before||{},post=report.after||{};
+ if((pre.swelling??0)>0||(post.swelling??0)>0)return 'Swelling recorded: avoid provoking finger loading and review with a clinician familiar with your history. A hot, swollen painful joint needs urgent medical advice.';
+ if(['pain','stiffness'].some(k=>post[k]!==undefined&&pre[k]!==undefined&&post[k]>pre[k]))return 'Your symptoms increased during this session. Do not progress finger loading; review the response before the next session. Recurrent or worsening symptoms need clinical review.';
+ if((pre.pain??0)>0||(post.pain??0)>0||(pre.stiffness??0)>0||(post.stiffness??0)>0)return 'You have recorded symptoms. Follow your clinician’s loading guidance and avoid provoking symptoms. Scores alone cannot establish safe training.';
+ if(!['before','after'].every(p=>['pain','stiffness'].every(k=>Number.isInteger((report[p]||{})[k]))))return 'Complete both check-ins to compare symptoms. No score is selected automatically.';
+ return 'You have reported no symptoms in these check-ins. Compare with the next morning and next session; this is not medical clearance.';
+}
+
+function validCalendar(v){const start=v&&v.start;return !!(typeof start==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(start)&&!isNaN(Date.parse(start))&&new Date(start).toISOString().slice(0,10)===start&&v.days&&['A','B','C'].every(k=>Number.isInteger(v.days[k])&&v.days[k]>=0&&v.days[k]<=6)&&new Set(Object.values(v.days)).size===3);}
+function validNewTrainingData(x){
+ const map=v=>v&&typeof v==='object'&&!Array.isArray(v)&&Object.keys(v).length<=10000;
+ const num=(v,a,b)=>Number.isFinite(v)&&v>=a&&v<=b;
+ const text=(v,n)=>typeof v==='string'&&v.length<=n;
+ const date=v=>typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&!isNaN(Date.parse(v))&&new Date(v).toISOString().slice(0,10)===v;
+ const exerciseKey=k=>/^\d{4}-\d{2}-\d{2}:[ABC]:[0-5]$/.test(k)&&date(k.slice(0,10));
+ if(x.exerciseDose!==undefined){if(!map(x.exerciseDose))return false;for(const[k,v]of Object.entries(x.exerciseDose)){if(!exerciseKey(k)||!map(v)||!Number.isInteger(v.intensity)||!num(v.intensity,0,10))return false;const amount=v.attempts??v.wallMinutes;if(v.attempts!==undefined&&v.wallMinutes!==undefined)return false;if(v.attempts!==undefined?(!Number.isInteger(amount)||!num(amount,0,100)):!num(amount,0,120))return false;if(v.load!==undefined&&(!num(v.load,0,1200)||Math.abs(v.load-amount*v.intensity)>.001))return false;}}
+ if(x.strengthRecords!==undefined){if(!map(x.strengthRecords))return false;for(const[k,v]of Object.entries(x.strengthRecords)){if(!exerciseKey(k)||!map(v)||!text(v.exercise,100)||!num(v.weightKg,0,1000)||!num(v.rpe,0,10)||typeof v.deload!=='boolean'||!Array.isArray(v.reps)||v.reps.length<1||v.reps.length>12||v.reps.some(n=>!Number.isInteger(n)||!num(n,1,50)))return false;}}
+ if(x.weeklySends!==undefined){if(!map(x.weeklySends))return false;for(const[k,v]of Object.entries(x.weeklySends))if(!date(k)||!map(v)||!text(v.grade,100)||!text(v.context,100)||!text(v.detail,1000)||!date(v.recorded))return false;}
+ if(x.fingerTests!==undefined){if(!map(x.fingerTests))return false;for(const[k,v]of Object.entries(x.fingerTests)){const side=h=>h===undefined||(map(h)&&['peakKg','mean3sKg','rfdKgPerS'].every(f=>h[f]===undefined||h[f]===null||num(h[f],0,1000)));if(!/^\d{4}-\d{2}-\d{2}:C:4$/.test(k)||!date(k.slice(0,10))||!map(v)||!['peakForce','rfd','criticalForce'].includes(v.type)||!side(v.left)||!side(v.right)||(v.edgeMm!==undefined&&!num(v.edgeMm,1,100))||(v.criticalForceKg!=null&&!num(v.criticalForceKg,0,1000))||(v.bodyMassKg!=null&&!num(v.bodyMassKg,20,300))||(v.aborted!==undefined&&typeof v.aborted!=='boolean')||(v.symptomsDuring!==undefined&&!(Number.isInteger(v.symptomsDuring)&&v.symptomsDuring>=0&&v.symptomsDuring<=10))||(v.grip!==undefined&&!text(v.grip,100))||(v.setup!==undefined&&!text(v.setup,300))||(v.notes!==undefined&&!text(v.notes,1000)))return false;}}
+ if(x.tripReviews!==undefined){if(!map(x.tripReviews))return false;for(const[k,v]of Object.entries(x.tripReviews)){if(!date(k)||!map(v)||v.trip!==k||!['draft','complete'].includes(v.status)||!date(v.updated)||!map(v.answers)||Object.keys(v.answers).length>10)return false;if(v.questionIndex!==undefined&&(!Number.isInteger(v.questionIndex)||!num(v.questionIndex,0,10)))return false;for(const[id,a]of Object.entries(v.answers))if(!/^[a-z_]+$/.test(id)||!map(a)||!text(a.choice,200)||(a.other!==undefined&&!text(a.other,1000)))return false;}}
+ if(x.blockReviews!==undefined){if(!map(x.blockReviews))return false;for(const[k,v]of Object.entries(x.blockReviews)){if(!date(k)||!map(v)||v.block!==1||!['draft','complete'].includes(v.status)||!date(v.updated)||!map(v.answers)||Object.keys(v.answers).length>15)return false;if(v.questionIndex!==undefined&&(!Number.isInteger(v.questionIndex)||!num(v.questionIndex,0,15)))return false;for(const[id,a]of Object.entries(v.answers))if(!/^[a-z_]+$/.test(id)||!map(a)||!text(a.choice,200)||(a.other!==undefined&&!text(a.other,1000)))return false;}}
+ return true;
+}
+
+function validGuided(x){
+ if(!validNewTrainingData(x))return false;
+ const map=v=>v&&typeof v==='object'&&!Array.isArray(v)&&Object.keys(v).length<=10000;
+ const text=(v,n)=>typeof v==='string'&&v.length<=n;
+ const int=(v,a,b)=>Number.isInteger(v)&&v>=a&&v<=b;
+ const date=k=>/^\d{4}-\d{2}-\d{2}$/.test(k)&&!isNaN(Date.parse(k))&&new Date(k).toISOString().slice(0,10)===k;
+ if(x.sessionFlow!==undefined){
+  if(!map(x.sessionFlow))return false;
+  for(const[k,v]of Object.entries(x.sessionFlow)){
+   if(!/^\d{4}-\d{2}-\d{2}:[ABC]$/.test(k)||!date(k.slice(0,10))||!map(v))return false;
+   if(!['intro','checkin','exercises','finished'].includes(v.stage))return false;
+   for(const[field,min,max]of [['fatigue',0,10],['startedAt',1,8640000000000000],['endedAt',1,8640000000000000],['durationMs',0,8640000000000000],['wholeRpe',1,10],['minutes',1,10080]])if(v[field]!==undefined&&!int(v[field],min,max))return false;
+   if(v.exerciseTimers!==undefined){
+    if(!map(v.exerciseTimers)||Object.keys(v.exerciseTimers).length>6)return false;
+    for(const[i,t]of Object.entries(v.exerciseTimers)){
+     if(!/^[0-5]$/.test(i)||!map(t)||!int(t.startedAt,1,8640000000000000))return false;
+     for(const field of ['endedAt','restUntil'])if(t[field]!==undefined&&!int(t[field],t.startedAt,8640000000000000))return false;
+     if(t.restMinutes!==undefined&&![0.5,1,1.5,2,3,4,5].includes(t.restMinutes))return false;
+    }
+   }
+   if(v.skipped!==undefined&&(!Array.isArray(v.skipped)||v.skipped.length>6||new Set(v.skipped).size!==v.skipped.length||!v.skipped.every(n=>int(n,0,5))))return false;
+  }
+ }
+ if(x.exerciseNotes!==undefined){
+  if(!map(x.exerciseNotes))return false;
+  for(const[k,v]of Object.entries(x.exerciseNotes)){
+   if(!/^\d{4}-\d{2}-\d{2}:[ABC]:[0-5]$/.test(k)||!date(k.slice(0,10))||!map(v)||Object.keys(v).length>6)return false;
+   for(const[q,a]of Object.entries(v))if(!['moves','limiter','quality','circuit','pump','recovery','lifting'].includes(q)||!map(a)||!text(a.choice,100)||(a.other!==undefined&&!text(a.other,1000)))return false;
+  }
+ }
+ return true;
+}
+
+function validBackup(x){const str=(v,n)=>typeof v==='string'&&v.length<=n;const num=(v,a,b)=>Number.isFinite(v)&&v>=a&&v<=b;const date=v=>str(v,10)&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&!isNaN(Date.parse(v))&&new Date(v).toISOString().slice(0,10)===v;return !!(x&&x.schema===1&&validGuided(x)&&(x.calendar===undefined||validCalendar(x.calendar))&&validTracking(x)&&(x.checklist===undefined||(x.checklist&&typeof x.checklist==='object'&&!Array.isArray(x.checklist)&&Object.keys(x.checklist).length<=10000&&Object.entries(x.checklist).every(([k,v])=>/^\d{4}-\d{2}-\d{2}:[ABC]:[0-5]$/.test(k)&&date(k.slice(0,10))&&v===true)))&&x.profile&&str(x.profile.name,100)&&['2','3'].includes(x.profile.availability)&&str(x.profile.date,10)&&(!x.profile.date||date(x.profile.date))&&['current','access','recovery'].every(k=>str(x.profile[k],2000))&&x.beta&&['moves','rests','links'].every(k=>str(x.beta[k],8000))&&['1','2','3','4'].includes(x.week)&&Array.isArray(x.logs)&&x.logs.length<=10000&&new Set(x.logs.map(y=>y&&y.id)).size===x.logs.length&&x.logs.every(y=>y&&str(y.id,100)&&date(y.date)&&['A','B','C'].includes(y.session)&&num(y.minutes,1,10080)&&(num(y.rpe,1,10)||(y.partial===true&&y.rpe===undefined))&&(num(y.pain,0,10)||(y.partial===true&&y.pain===undefined))&&(y.partial===undefined||typeof y.partial==='boolean')&&(y.partialData===undefined||(y.partialData&&typeof y.partialData==='object'&&!Array.isArray(y.partialData)&&validTracking(y.partialData)&&validGuided(y.partialData)))&&(y.ankle===undefined||num(y.ankle,0,10))&&(y.enjoyment===undefined||num(y.enjoyment,1,5))&&['good','mixed','poor','unrated'].includes(y.quality)&&str(y.notes,4000)));}
+function migratePlan(x){
+ if(x.calendarAnchorVersion!==2)x={...x,calendarAnchorVersion:2,...(x.calendar?{calendar:{start:'2026-10-23',days:{A:5,B:2,C:0}}}:{})};
+ if(x.planVersion===4)return x;
+ if(x.planVersion===3)return {...x,planVersion:4,week:'1'};
+ let checklist={...(x.checklist||{})};
+ if(x.scheduleVersion!==2){
+  const mapped={};
+  for(const[k,v]of Object.entries(checklist)){
+   if(k.includes(':C:'))continue;
+   mapped[k.endsWith(':A:5')?k.slice(0,10)+':C:1':k]=v;
+  }
+  checklist=mapped;
+ }
+ const mapped={};
+ for(const[k,v]of Object.entries(checklist)){
+  const key=k.endsWith(':C:2')?k.slice(0,10)+':C:4':k.endsWith(':C:3')?k.slice(0,10)+':C:5':k;
+  mapped[key]=v;
+ }
+ return {...x,scheduleVersion:2,planVersion:4,week:'1',checklist:mapped,profile:{...x.profile,current:x.profile.current||''}};
+}
+const api={review,validBackup,migratePlan,fingerMessage};if(typeof module!=='undefined')module.exports=api;else root.Coach=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+
+
+
+
+
+
+
+</script><script>'use strict';
+function tapScale(title,value,max,onPick,anchors){
+ const group=el('fieldset',undefined,'tap-scale');group.append(el('legend',title));
+ const buttons=el('div',undefined,'scale-buttons');
+ for(let n=0;n<=max;n++){const b=el('button',String(n));b.type='button';b.setAttribute('aria-label',title+' '+n+' out of '+max);b.setAttribute('aria-pressed',String(value===n));b.onclick=()=>onPick(n);buttons.append(b);}
+ group.append(buttons,el('p',anchors,'muted'));return group;
+}
+function sessionSymptoms(session){
+ const box=el('div',undefined,'finger-checks'),key=trainingDate+':'+session;
+ const report=(state.fingerReports||{})[key]||{};
+ box.append(el('h3','Finger check-in'),el('p','Rate your worst affected finger now.','muted'));
+ for(const phase of ['before','after']){
+  const details=el('details',undefined,'symptom-panel');details.open=phase==='before';
+  const data=report[phase]||{},complete=['pain','stiffness'].every(k=>Number.isInteger(data[k]));
+  const summary=el('summary',(phase==='before'?'Before session':'After session')+(complete?' · saved':' · not complete'));details.append(summary);
+  const save=(metric,value)=>{const prior=(state.fingerReports||{})[key]||{};const next={...state,fingerReports:{...(state.fingerReports||{}),[key]:{...prior,[phase]:{...(prior[phase]||{}),[metric]:value}}}};if(persist(next)){const replacement=sessionSymptoms(session);const newDetails=replacement.querySelectorAll('details');newDetails[phase==='before'?0:1].open=true;box.replaceWith(replacement);renderTrackingHistory();}};
+  details.append(tapScale('Finger pain',data.pain,10,n=>save('pain',n),'0 none · 1–3 mild · 4–6 moderate · 7–9 severe · 10 worst imaginable'));
+  details.append(tapScale('Finger stiffness',data.stiffness,10,n=>save('stiffness',n),'0 none · 5 clearly restricted · 10 unable to move normally'));
+  box.append(details);
+ }
+ box.append(el('p',Coach.fingerMessage(report),'symptom-advice'));
+ return box;
+}
+function askExerciseRpe(key,name,check){
+ const dialog=el('dialog',undefined,'rpe-dialog');let selected=(state.exerciseRpe||{})[key];
+ dialog.append(el('h2','How hard was '+name+'?'),el('p','Rate how hard this exercise block felt.','muted'));
+ const controls=el('div',undefined,'actions'),save=el('button','Save RPE & complete','primary'),cancel=el('button','Cancel');save.type=cancel.type='button';save.disabled=selected===undefined;
+ const scale=tapScale('Actual exercise RPE',selected,10,n=>{selected=n;save.disabled=false;for(const b of scale.querySelectorAll('button'))b.setAttribute('aria-pressed',String(Number(b.textContent)===n));save.click();},'0 rest · 2 easy · 5 moderate · 7 hard · 9 very hard · 10 maximal');
+ dialog.append(scale);controls.append(cancel);dialog.append(controls);document.body.append(dialog);
+ let committed=false;
+ save.onclick=()=>{
+  const complete=(dose,strength)=>{const next={...state,checklist:{...(state.checklist||{}),[key]:true},exerciseRpe:{...(state.exerciseRpe||{}),[key]:selected},...(dose?{exerciseDose:{...(state.exerciseDose||{}),[key]:dose}}:{}),...(strength?{strengthRecords:{...(state.strengthRecords||{}),[key]:strength}}:{})};if(persist(Guided.finishExerciseState(next,key))){committed=true;dialog.close();renderSessions();renderTrackingHistory();queueMicrotask(()=>afterExerciseComplete(key));}};
+  if((key.split(':')[1]==='A'||key.split(':')[1]==='B')&&key.split(':')[2]==='1')askExerciseDose(key,selected,complete);else if(['Bench press','Overhead press','Leg press','Hip hinge or unilateral legs','Trunk control','Finger edge lift'].includes(name))askStrengthRecord(key,selected,record=>complete(undefined,record));else complete();
+ };
+ cancel.onclick=()=>dialog.close();dialog.onclose=()=>{if(check&&!committed)check.checked=!!(state.checklist||{})[key];dialog.remove();};dialog.showModal();
+}
+function renderTrackingHistory(){
+ const host=document.querySelector('#tracking-history');if(!host)return;host.replaceChildren();
+ const keys=new Set([...Object.keys(state.fingerReports||{}),...Object.keys(state.exerciseRpe||{}).map(k=>k.slice(0,12))]);
+ for(const key of Object.keys(state.sessionFlow||{}))keys.add(key);
+ const reports=[...keys].sort((a,b)=>b.localeCompare(a)).map(k=>[k,(state.fingerReports||{})[k]||{}]);
+ if(!reports.length){host.append(el('p','You have not recorded any finger check-ins yet.','muted'));return;}
+ for(const[key,report]of reports){const row=el('div',undefined,'tracking-row');row.append(el('h3',key.slice(0,10)+' · Session '+key.slice(-1)));
+ for(const phase of ['before','after']){const d=report[phase]||{};row.append(el('p',`${phase}: pain ${d.pain??'—'}/10 · stiffness ${d.stiffness??'—'}/10`));}
+ row.append(el('p',Coach.fingerMessage(report),'muted'));
+ const flow=(state.sessionFlow||{})[key]||{};if(flow.fatigue!==undefined)row.append(el('p','Starting fatigue: '+flow.fatigue+'/10','muted'));
+ if(flow.wholeRpe!==undefined)row.append(el('p','Whole-session RPE: '+flow.wholeRpe+'/10','muted'));
+ for(const[k,v]of Object.entries(state.exerciseNotes||{}).filter(([k])=>k.startsWith(key+':')))for(const[q,a]of Object.entries(v))row.append(el('p',q+': '+a.choice+(a.choice==='Other'&&a.other?' — '+a.other:''),'muted'));
+ const prefix=key+':';const efforts=Object.entries(state.exerciseRpe||{}).filter(([k])=>k.startsWith(prefix));
+ for(const[k,v]of efforts){const s=PROGRAM.sessions.find(s=>s.id===key.slice(-1));const i=Number(k.split(':')[2]);row.append(el('p',(s?.steps[i]?.[0]||'Exercise')+': actual RPE '+v+'/10','muted'));}host.append(row);}
+}
+function renderLogEffort(){
+ const input=document.querySelector('#log-form').elements.rpe,host=document.querySelector('#log-rpe-scale');if(!host)return;
+ host.replaceChildren(tapScale('Whole-session RPE',input.value===''?undefined:Number(input.value),10,n=>{input.value=String(n);renderLogEffort();},'0 rest · 2 easy · 5 moderate · 7 hard · 9 very hard · 10 maximal. Use 1–10 for a completed training session.'));
+}
+
+</script><script>(function(root){
+ const TT=typeof TrainingTime!=='undefined'?TrainingTime:require('./training-time.js');
+ const dayMs=86400000;
+ const parse=d=>Date.parse(d+'T00:00:00Z');
+ function addDays(d,n){return new Date(parse(d)+n*dayMs).toISOString().slice(0,10);}
+ function context(date,start,days,pauses){
+  const cal={start,...(pauses?{pauses}:{})},pause=TT.pauseAt(cal,date);
+  if(pause)return {week:0,block:0,blockWeek:0,id:null,pause};
+  const elapsed=TT.elapsed(cal,date);
+  if(elapsed<0)return {week:0,block:0,blockWeek:0,id:null};
+  const week=Math.floor(elapsed/7)+1;
+  const weekday=new Date(parse(date)).getUTCDay();
+  return {week,block:Math.floor((week-1)/4)+1,blockWeek:(week-1)%4+1,id:Object.keys(days).find(id=>days[id]===weekday)||null};
+ }
+ function valid(v){return !!(v&&typeof v.start==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v.start)&&!isNaN(parse(v.start))&&new Date(parse(v.start)).toISOString().slice(0,10)===v.start&&v.days&&['A','B','C'].every(k=>Number.isInteger(v.days[k])&&v.days[k]>=0&&v.days[k]<=6)&&new Set(Object.values(v.days)).size===3);}
+ function sessionDate(start,weekday){return addDays(start,(weekday-new Date(parse(start)).getUTCDay()+7)%7);}
+ function sessionNumber(id,start,days){return Object.keys(days).sort((a,b)=>sessionDate(start,days[a]).localeCompare(sessionDate(start,days[b]))).indexOf(id)+1;}
+ const api={addDays,context,valid,sessionDate,sessionNumber};if(typeof module!=='undefined')module.exports=api;else root.Planning=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+function calendarSettings(){return state.calendar||PROGRAM.calendar;}
+function prettyDate(date){return new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric'}).format(new Date(date+'T12:00:00'));}
+function blockTitle(date,index){const planned=typeof PROGRAM!=='undefined'&&PROGRAM.blocks?.[index];if(planned?.title)return planned.title;if(index===0)return 'Assess & establish';if(date<'2027-03-01')return 'Strength & capacity';if(date<'2027-06-01')return 'Route practice & limiting qualities';if(date<'2027-09-01')return 'Route-specific links';return 'Project preparation & attempts';}
+function renderSchedule(){
+ const host=document.querySelector('#schedule-tree');if(!host)return;host.replaceChildren();
+ const cfg=calendarSettings(),today=localDate(),current=Planning.context(today,cfg.start,cfg.days),end=state.profile.date||PROGRAM.goal?.date||'2027-11-30';
+ const count=Math.min(60,Math.max(1,Math.ceil(TrainingTime.elapsed(cfg,end)/28)));
+ for(let b=0;b<count;b++){
+  const start=TrainingTime.dateAt(cfg,b*28),block=el('details',undefined,'schedule-block');block.open=current.block===b+1;
+  for(const p of TrainingTime.pauses(cfg).filter(p=>p.start<start&&(b===0||p.start>TrainingTime.dateAt(cfg,b*28-1)))){const pause=el('details',undefined,'schedule-block');pause.open=current.pause===p;pause.append(el('summary','Pause · '+(p.title||'No training')),el('p',prettyDate(p.start)+' – '+prettyDate(p.end)+'. No scheduled sessions; the training calendar resumes afterwards.'+(p.review?' A short questionnaire opens on '+prettyDate(p.tripEnd||p.end)+'.':''),'muted'));host.append(pause);}
+  block.append(el('summary','Block '+(b+1)+' · '+blockTitle(start,b)),el('p',prettyDate(start)+' – '+prettyDate(TrainingTime.dateAt(cfg,b*28+27)),'muted'));
+  const wrap=el('div',undefined,'metrics-table-wrap'),table=el('table',undefined,'metrics-table'),head=el('tr');for(const text of ['Week','Phase','Boulder','Endurance','S&C','Load ceiling'])head.append(el('th',text));table.append(head);
+  for(let i=0;i<4;i++){const week=b*4+i+1,date=Planning.sessionDate(TrainingTime.dateAt(cfg,b*28+i*7),cfg.days.A),row=el('tr'),deload=i===3;
+   const a=Progression.prescribe(PROGRAM.sessions.find(s=>s.id==='A'),week,b===0?null:state,b===0?null:date+':A',{preview:true}),bd=Planning.sessionDate(TrainingTime.dateAt(cfg,b*28+i*7),cfg.days.B),endurance=Progression.prescribe(PROGRAM.sessions.find(s=>s.id==='B'),week,b===0?null:state,b===0?null:bd+':B',{preview:true});
+   const cells=[String(week),deload?'Deload':i===0?'Establish / return':'Build',b<2?a.steps[1][1]:'Review before setting dose',b<2?endurance.steps[1][1]:'Review before setting dose',deload?'~50% latest build reps':i===0?'Establish / return':i===1?'Eligible +1 total rep':'Eligible kg or rep step',b===0?'Establish four-week total':b===1?'Whole block ≤110% of block 1':'Whole block ≤110% of previous block'];for(const text of cells)row.append(el('td',text));table.append(row);
+  }wrap.append(table);block.append(wrap,el('p','The 10% ceiling compares total load across consecutive four-week blocks, including deloads. Build weeks can increase more steeply. Each exercise, Boulder, Endurance, S&C and combined load retain a block budget. Future doses are provisional and update from your actual records.','muted'));
+  if(b===1){const status=Progression.blockStatus(state,cfg,start);if(!status.available)block.append(el('p',status.reason,'muted'));}
+  if(b>1){const planned=PROGRAM.blocks?.[b];if(planned?.theme)block.append(el('p','Theme: '+planned.theme,'muted'));block.append(el('p',(planned?.status==='active'?'Planned in TRAINING_PLAN.md; ':'Draft: ')+'complete the previous block review before exercise doses are set for this block.','muted'));}
+  for(let w=0;w<4;w++){
+   const week=b*4+w+1,weekStart=TrainingTime.dateAt(cfg,b*28+w*7),weekBox=el('details',undefined,'schedule-week');weekBox.open=week===current.week;
+   weekBox.append(el('summary','Week '+week+' · '+(Progression.cycle(week)===4?'Deload':'Build')+' · '+prettyDate(weekStart)));
+   if(b===0)weekBox.append(el('p',PROGRAM.weekNotes[String(w+1)],'muted'));
+   const sessions=PROGRAM.sessions.filter(s=>s.id!=='C'||state.profile.availability!=='2').map(s=>({s,date:Planning.sessionDate(weekStart,cfg.days[s.id])})).sort((a,b)=>a.date.localeCompare(b.date));
+   for(const {s:baseSession,date}of sessions){
+    const s=Progression.prescribe(baseSession,week,week<=4?null:state,week<=4?null:date+':'+baseSession.id,{preview:true});
+    const item=el('details',undefined,'schedule-session');item.append(el('summary','session-'+Planning.sessionNumber(s.id,cfg.start,cfg.days)+' · '+s.title));
+    item.append(el('p',s.aim,'muted'));
+    if(b<2)for(const [i,[name,dose,detail]]of s.steps.entries()){const row=el('div',undefined,'schedule-exercise');row.append(el('h3',name),el('p',dose+(s.targetRpe[i]?' · target RPE '+s.targetRpe[i]+'/10':''),'dose'),el('p',detail));item.append(row);}
+    else item.append(el('p','Your exact exercises, volume and intensity will be set at your block review.','muted'));
+    weekBox.append(item);
+   }
+   block.append(weekBox);
+  }
+  if(b===0){const review=el('button','End-of-block questionnaire','block-review-button');review.onclick=openBlockReview;block.append(review);}host.append(block);
+ }
+ const f=document.querySelector('#calendar-form');f.elements.start.value=cfg.start;for(const id of ['A','B','C'])f.elements[id].value=String(cfg.days[id]);
+}
+
+</script><script>(function(root){
+ function complete(session,checks,skipped,prefix){return session.steps.every((step,i)=>checks[prefix+':'+i]===true||(step[1].startsWith('Optional')&&skipped.includes(i)));}
+ function questions(id){
+  if(id==='A')return [ ['moves','How did the hard moves go?',['Completed my intended moves','Made progress on some moves','No progress today','Other']],['limiter','What mainly limited your attempts?',['Individual move difficulty','Forearm pump','Technique or footwork','Confidence','Finger symptoms','Other']],['quality','How did your movement quality hold up?',['Stayed controlled','Mixed','Dropped noticeably','Other']] ];
+  if(id==='B')return [ ['circuit','How much of the planned circuit did you complete?',['All bouts as planned','Shortened the bouts','Reduced the difficulty','Stopped early','Other']],['pump','How much forearm pump did you feel?',['None','Light and manageable','Moderate','Heavy / hard to control','Other']],['recovery','How recovered were you after each rest?',['Fully recovered','Mostly recovered','Still noticeably pumped','Recovery got worse each bout','Other']] ];
+  return [ ['lifting','How did your lifting feel?',['Controlled with reps in reserve','Harder than intended','Reduced the load or sets','Stopped because of symptoms','Other']],['quality','How did your technique hold up?',['Stayed controlled','Mixed','Dropped noticeably','Other']] ];
+ }
+ function elapsedMs(flow,now=Date.now()){if(flow.durationMs!==undefined)return flow.durationMs;if(flow.stage==='finished'&&flow.minutes)return flow.minutes*60000;if(!flow.startedAt)return Math.max(0,(flow.minutes||0)*60000);return Math.max(0,(flow.endedAt||now)-flow.startedAt);}
+ function stopTimer(flow,now=Date.now()){if(flow.endedAt||flow.durationMs!==undefined)return flow;return {...flow,endedAt:now,durationMs:elapsedMs(flow,now)};}
+ function timerText(ms){const seconds=Math.floor(ms/1000);return String(Math.floor(seconds/3600)).padStart(2,'0')+':'+String(Math.floor(seconds%3600/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');}
+ function quitSessionState(state,key,save,now=Date.now(),session){
+ const flow=(state.sessionFlow||{})[key]||{},stopped=stopTimer(flow,now);
+ const filter=(map,predicate)=>Object.fromEntries(Object.entries(map||{}).filter(([k])=>predicate(k)));
+ const partialData={sessionFlow:{[key]:stopped},fingerReports:filter(state.fingerReports,k=>k===key),exerciseRpe:filter(state.exerciseRpe,k=>k.startsWith(key+':')),exerciseDose:filter(state.exerciseDose,k=>k.startsWith(key+':')),strengthRecords:filter(state.strengthRecords,k=>k.startsWith(key+':')),exerciseNotes:filter(state.exerciseNotes,k=>k.startsWith(key+':'))};
+ const completed=Object.keys(state.checklist||{}).filter(k=>k.startsWith(key+':')&&state.checklist[k]);
+ const lines=completed.map(k=>{const i=Number(k.split(':')[2]);return (session?.steps[i]?.[0]||'Exercise '+(i+1))+(state.exerciseRpe?.[k]!==undefined?' · RPE '+state.exerciseRpe[k]+'/10':'');});
+ for(const answers of Object.values(partialData.exerciseNotes))for(const[q,a]of Object.entries(answers))lines.push(q+': '+a.choice+(a.choice==='Other'&&a.other?' — '+a.other:''));
+ const entry={id:'partial-'+key+'-'+now,date:key.slice(0,10),session:key.slice(-1),partial:true,partialData,minutes:Math.max(1,Math.round(elapsedMs(stopped)/60000)),quality:'unrated',notes:('Ended early.\n'+(lines.length?lines.join('\n'):'No exercise boxes completed.')).slice(0,4000)};
+ return {...state,sessionFlow:filter(state.sessionFlow,k=>k!==key),fingerReports:filter(state.fingerReports,k=>k!==key),exerciseRpe:filter(state.exerciseRpe,k=>!k.startsWith(key+':')),exerciseDose:filter(state.exerciseDose,k=>!k.startsWith(key+':')),strengthRecords:filter(state.strengthRecords,k=>!k.startsWith(key+':')),exerciseNotes:filter(state.exerciseNotes,k=>!k.startsWith(key+':')),checklist:filter(state.checklist,k=>!k.startsWith(key+':')),logs:save?[...state.logs,entry]:state.logs};
+}
+
+  function exerciseClock(timer,now=Date.now(),sessionEnd){const stop=timer.endedAt||sessionEnd;return {elapsed:Math.max(0,(stop||now)-timer.startedAt),resting:!!timer.restUntil&&!stop,remaining:timer.restUntil?Math.max(0,timer.restUntil-now):0};}
+ function freezeOne(timer,now=Date.now()){if(!timer||timer.endedAt)return timer;const copy={...timer,endedAt:now};delete copy.restUntil;return copy;}
+ function finishExerciseState(state,key,now=Date.now()){
+  const id=key.slice(0,12),index=key.split(':')[2],flow=state.sessionFlow?.[id],timer=flow?.exerciseTimers?.[index];if(!timer||timer.endedAt)return state;
+  return {...state,sessionFlow:{...state.sessionFlow,[id]:{...flow,exerciseTimers:{...flow.exerciseTimers,[index]:freezeOne(timer,now)}}}};
+ }
+
+ const api={complete,questions,elapsedMs,stopTimer,timerText,quitSessionState,exerciseClock,freezeOne,finishExerciseState};if(typeof module!=='undefined')module.exports=api;else root.Guided=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+function askClimbingNotes(s,index,check){
+ const key=flowKey(s.id)+':'+index,prior=(state.exerciseNotes||{})[key]||{},answers=JSON.parse(JSON.stringify(prior));
+ const dialog=el('dialog',undefined,'rpe-dialog');dialog.append(el('h2',s.id==='C'?'How did your gym session go?':'Your climbing notes'));
+ const questions=Guided.questions(s.id),save=el('button','Save answers & complete','primary');save.disabled=!questions.every(([k])=>answers[k]?.choice);
+ for(const[k,title,options]of questions){const field=el('fieldset',undefined,'note-question');field.append(el('legend',title));const choices=el('div',undefined,'note-options'),other=el('textarea');other.placeholder='Add detail if you want';other.setAttribute('aria-label',title+' — other details');other.maxLength=1000;other.value=answers[k]?.other||'';other.hidden=answers[k]?.choice!=='Other';
+  options.forEach(choice=>{const b=el('button',choice);b.type='button';b.setAttribute('aria-pressed',String(answers[k]?.choice===choice));b.onclick=()=>{answers[k]={choice,other:other.value};other.hidden=choice!=='Other';for(const button of choices.querySelectorAll('button'))button.setAttribute('aria-pressed',String(button===b));save.disabled=!questions.every(([name])=>answers[name]?.choice);};choices.append(b);});
+  other.oninput=()=>{if(answers[k])answers[k].other=other.value;};field.append(choices,other);dialog.append(field);
+ }
+ const cancel=el('button','Cancel');cancel.onclick=()=>dialog.close();const controls=el('div',undefined,'actions');controls.append(save,cancel);dialog.append(controls);let committed=false;
+ save.onclick=()=>{if(persist(Guided.finishExerciseState({...state,exerciseNotes:{...(state.exerciseNotes||{}),[key]:answers},checklist:{...(state.checklist||{}),[key]:true}},key))){committed=true;dialog.close();renderSessions();renderTrackingHistory();queueMicrotask(()=>afterExerciseComplete(key));}};
+ dialog.onclose=()=>{if(check&&!committed)check.checked=!!(state.checklist||{})[key];dialog.remove();};document.body.append(dialog);dialog.showModal();
+}
+function askSessionFinish(s){
+ const key=flowKey(s.id);const stopped=Guided.stopTimer(flowFor(s.id));if(stopped!==flowFor(s.id)&&!saveFlow(s.id,stopped))return;const flow=flowFor(s.id),old=(state.fingerReports||{})[key]||{},data={rpe:flow.wholeRpe,...(old.after||{})};let index=0;
+ const dialog=el('dialog',undefined,'rpe-dialog');document.body.append(dialog);dialog.onclose=()=>dialog.remove();
+ const prompts=[['rpe','How hard was the whole session?',10,'1 very easy · 5 moderate · 7 hard · 9 very hard · 10 maximal'],['pain','How much finger pain do you have now?',10,'0 none · 5 moderate · 10 worst imaginable'],['stiffness','How stiff do your fingers feel now?',10,'0 none · 5 clearly restricted · 10 unable to move normally']];
+ function draw(){dialog.replaceChildren();
+  if(index<prompts.length){const[k,title,max,anchors]=prompts[index];dialog.append(el('p','Finish · '+(index+1)+' of 4','muted'),el('h2',title));const scale=tapScale(title,data[k],max,n=>{if(k==='rpe'&&n===0)return;data[k]=n;index++;draw();},anchors);if(k==='rpe')scale.querySelector('button').disabled=true;dialog.append(scale);
+  }else{
+   dialog.append(el('h2','Save your session'),el('p','Training time: '+Guided.timerText(Guided.elapsedMs(flow)),'recorded-time'),el('p',Coach.fingerMessage({before:old.before,after:{pain:data.pain,stiffness:data.stiffness}}),'symptom-advice'));
+   const save=el('button','Save session','primary');save.onclick=()=>{const duration=Math.max(1,Math.round(Guided.elapsedMs(flow)/60000));
+    const notes=Object.entries(state.exerciseNotes||{}).filter(([k])=>k.startsWith(key+':')).flatMap(([,v])=>Object.entries(v).map(([q,a])=>q+': '+a.choice+(a.choice==='Other'&&a.other?' — '+a.other:''))).join('\n');
+    const qualityChoice=Object.entries(state.exerciseNotes||{}).find(([k,v])=>k.startsWith(key+':')&&v.quality)?.[1].quality.choice;
+    const quality=qualityChoice==='Stayed controlled'?'good':qualityChoice==='Mixed'?'mixed':qualityChoice==='Dropped noticeably'?'poor':'unrated';
+    const pre=old.before||{},entry={id:'guided-'+key,date:trainingDate,session:s.id,minutes:duration,rpe:data.rpe,pain:Math.max(pre.pain||0,data.pain),quality,notes:notes||'Completed guided session.'};
+    const next={...state,fingerReports:{...(state.fingerReports||{}),[key]:{...old,after:{pain:data.pain,stiffness:data.stiffness}}},sessionFlow:{...(state.sessionFlow||{}),[key]:{...flow,stage:'finished',wholeRpe:data.rpe,minutes:duration}},logs:[...state.logs.filter(x=>x.id!==entry.id),entry]};
+    if(!Coach.validBackup(next)){notice('Your session could not be saved. Check the values and try again.');return;}if(persist(next)){dialog.close();render();queueMicrotask(()=>maybeAskWeeklySend(s.id));}
+   };dialog.append(save);
+  }
+  const controls=el('div',undefined,'actions');if(index>0){const back=el('button','Back');back.onclick=()=>{index--;draw();};controls.append(back);}const later=el('button','Finish later');later.onclick=()=>dialog.close();controls.append(later);dialog.append(controls);
+ }
+ draw();dialog.showModal();
+}
+
+function askExerciseDose(key,intensity,onSave){
+ const id=key.split(':')[1],isBoulder=id==='A',dialog=el('dialog',undefined,'rpe-dialog');
+ const old=(state.exerciseDose||{})[key]||{},field=isBoulder?'attempts':'wallMinutes';let selected=old[field];
+ dialog.append(el('h2',isBoulder?'How many attempts did you make?':'How many minutes were you on the wall?'),el('p',isBoulder?'Count your actual attempts, including unsuccessful ones.':'Count actual climbing time only. Exclude all rests and time off the wall.','muted'));
+ const options=el('div',undefined,'grade-options'),input=el('input');input.type='number';input.min='0';input.max=isBoulder?'100':'120';input.step=isBoulder?'1':'0.1';input.hidden=true;input.setAttribute('aria-label',isBoulder?'Actual attempts':'Actual wall minutes');
+ const save=el('button','Save dose & complete','primary');save.disabled=selected===undefined;
+ for(const n of (isBoulder?[0,1,2,3,4,5,6,7,8,9,10,12]:[0,3,4.5,6,9,10,10.5,12,15,18])){const b=el('button',String(n));b.setAttribute('aria-pressed',String(selected===n));b.onclick=()=>{selected=n;input.hidden=true;save.disabled=false;for(const x of options.querySelectorAll('button'))x.setAttribute('aria-pressed',String(x===b));};options.append(b);}
+ const other=el('button','Other');other.onclick=()=>{selected=undefined;input.hidden=false;input.value='';save.disabled=true;for(const x of options.querySelectorAll('button'))x.setAttribute('aria-pressed','false');input.focus();};options.append(other);input.oninput=()=>{const n=Number(input.value);selected=input.value!==''&&Number.isFinite(n)?n:undefined;save.disabled=selected===undefined||!input.checkValidity();};
+ save.onclick=()=>{if(selected===undefined)return;dialog.close();onSave({[field]:selected,intensity,load:selected*intensity});};
+ const cancel=el('button','Cancel');cancel.onclick=()=>dialog.close();dialog.append(options,input,save,cancel);dialog.onclose=()=>dialog.remove();document.body.append(dialog);dialog.showModal();
+}
+</script><script>(function(root){
+ const ms=86400000,parse=d=>Date.parse(d+'T00:00:00Z');
+ function weekly(logs,start,today){
+  const current=Math.max(0,Math.floor((parse(today)-parse(start))/(7*ms))),first=Math.max(0,current-7);
+  const weeks=Array.from({length:current-first+1},(_,i)=>({week:first+i+1,start:new Date(parse(start)+(first+i)*7*ms).toISOString().slice(0,10),minutes:0,load:0,missingRpe:0}));
+  for(const log of logs){if(log.date>today)continue;const index=Math.floor((parse(log.date)-parse(start))/(7*ms))-first;if(index<0||index>=weeks.length)continue;weeks[index].minutes+=log.minutes;if(Number.isFinite(log.rpe))weeks[index].load+=log.minutes*log.rpe;else weeks[index].missingRpe++;}
+  return weeks;
+ }
+ function latestSymptom(state,today,metric){
+  const candidates=[];
+  function add(reports,flows){for(const[key,report]of Object.entries(reports||{})){if(key.slice(0,10)>today)continue;const flow=(flows||{})[key]||{};for(const phase of ['before','after']){const value=report[phase]?.[metric];if(!Number.isFinite(value))continue;const time=phase==='after'?(flow.endedAt||flow.startedAt):(flow.startedAt);candidates.push({value,date:key.slice(0,10),phase,session:key.slice(-1),order:time||parse(key.slice(0,10))+(phase==='after'?1:0)});}}}
+  add(state.fingerReports,state.sessionFlow);for(const log of state.logs||[])if(log.partialData)add(log.partialData.fingerReports,log.partialData.sessionFlow);
+  return candidates.sort((a,b)=>b.date.localeCompare(a.date)||b.order-a.order)[0]||null;
+ }
+ const api={weekly,latestSymptom};if(typeof module!=='undefined')module.exports=api;else root.ProgressData=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+function drawLandingCharts(){
+ const host=document.querySelector('#landing-charts');if(!host)return;host.replaceChildren();
+ const weeks=ProgressData.weekly(state.logs,calendarSettings().start,localDate()),card=el('div',undefined,'weekly-chart');card.append(el('h2','Weekly effort load'));
+ const svgNS='http://www.w3.org/2000/svg',svg=document.createElementNS(svgNS,'svg');svg.setAttribute('viewBox','0 0 720 290');svg.setAttribute('role','img');svg.setAttribute('aria-label','Weekly effort load shown as a line on a single axis.');
+ function node(tag,attrs,text){const n=document.createElementNS(svgNS,tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,String(v));if(text!==undefined)n.textContent=text;svg.append(n);return n;}
+ const left=64,right=650,top=38,bottom=225,width=right-left,height=bottom-top;
+ const maxL=Math.max(300,Math.ceil(Math.max(...weeks.map(w=>w.load))/300)*300);
+ node('text',{x:left,y:19,fill:'#a5631f','font-size':13},'Effort load');
+ for(let i=0;i<=4;i++){const y=bottom-height*i/4;node('line',{x1:left,y1:y,x2:right,y2:y,stroke:'#d0d7cb'});node('text',{x:left-10,y:y+4,'text-anchor':'end',fill:'#60716a','font-size':12},Math.round(maxL*i/4));}
+ const spacing=width/weeks.length,points=[];
+ weeks.forEach((w,i)=>{const x=left+spacing*(i+.5);points.push([x,bottom-height*w.load/maxL]);node('text',{x,y:247,'text-anchor':'middle',fill:'#192d29','font-size':12},'W'+w.week);node('text',{x,y:266,'text-anchor':'middle',fill:'#60716a','font-size':10},w.start.slice(5));});
+ node('polyline',{points:points.map(p=>p.join(',')).join(' '),fill:'none',stroke:'#bf7b2b','stroke-width':3,'stroke-linejoin':'round'});points.forEach(([x,y],i)=>{const dot=node('circle',{cx:x,cy:y,r:4,fill:'#bf7b2b'}),title=document.createElementNS(svgNS,'title');title.textContent='Week '+weeks[i].week+': effort load '+weeks[i].load;dot.append(title);});
+ card.append(svg,el('p','Effort load = minutes × session RPE.','muted'));
+ if(weeks.some(w=>w.missingRpe))card.append(el('p','Sessions without a recorded RPE are excluded from effort load.','muted'));
+ if(!state.logs.length)card.append(el('p','Your first saved session will appear here.','muted'));
+ const table=el('table',undefined,'sr-only'),caption=el('caption','Weekly training data');table.append(caption);const heading=el('tr');for(const title of ['Week','Effort load'])heading.append(el('th',title));table.append(heading);weeks.forEach(w=>{const row=el('tr');[w.week,w.load].forEach(v=>row.append(el('td',String(v))));table.append(row);});card.append(table);host.append(card);
+
+}
+</script><script>'use strict';
+let exerciseClock=null;
+function attachExerciseTimer(row,key,name,done,skipped){
+ const id=key.split(':')[1],index=Number(key.split(':')[2]),flow=flowFor(id),timer=(flow.exerciseTimers||{})[index];
+ const stamp=el('span',undefined,'exercise-clock');stamp.dataset.exerciseTimer=key;stamp.setAttribute('aria-label',name+' timer');row.append(stamp);
+ const controls=el('div',undefined,'exercise-timer-controls');
+ const session=PROGRAM.sessions.find(s=>s.id===id),isNotes=session&&session.targetRpe[index]===null;
+ if((!timer||timer.endedAt)&&!done&&!skipped){const start=el('button',timer?'Restart':'Start','primary exercise-start');start.onclick=()=>{const current=flowFor(id);if(saveFlow(id,{exerciseTimers:{...(current.exerciseTimers||{}),[index]:{startedAt:Date.now()}}})){renderSessions();if(isNotes)askClimbingNotes(session,index);}};controls.append(start);}
+ if(isNotes&&timer&&!timer.endedAt&&!done&&!skipped){const resume=el('button','Continue questions','primary');resume.onclick=()=>askClimbingNotes(session,index);controls.append(resume);}
+ if(!isNotes&&timer&&!timer.endedAt&&!done&&!skipped){
+  const defaults={'Hard bouldering':3,'Repeatable capacity circuit':3,'Trunk control':1,'Finger edge lift':1,'Prepare':1};
+  const label=el('label','Rest between sets'),select=el('select');for(const n of [0.5,1,1.5,2,3,4,5]){const option=el('option',n===0.5?'30 sec':n===1.5?'1 min 30 sec':n+' min');option.value=String(n);select.append(option);}select.value=String(timer.restMinutes||defaults[name]||2);label.append(select);
+  const rest=el('button',timer.restUntil?'Resume exercise':'Rest','rest-control');rest.onclick=()=>{const current=flowFor(id),entry={...current.exerciseTimers[index]};if(entry.restUntil)delete entry.restUntil;else {entry.restMinutes=Number(select.value);entry.restUntil=Date.now()+entry.restMinutes*60000;}if(saveFlow(id,{exerciseTimers:{...current.exerciseTimers,[index]:entry}}))renderSessions();};controls.append(label,rest);
+ }
+ row.append(controls);updateExerciseClocks();
+}
+function updateExerciseClocks(){
+ for(const stamp of document.querySelectorAll('[data-exercise-timer]')){
+  const key=stamp.dataset.exerciseTimer,id=key.split(':')[1],index=Number(key.split(':')[2]),flow=flowFor(id),timer=(flow.exerciseTimers||{})[index];
+  if(!timer){stamp.textContent='';continue;}
+  const reading=Guided.exerciseClock(timer,Date.now(),flow.endedAt);stamp.classList.toggle('is-resting',reading.resting);stamp.textContent=reading.resting?(reading.remaining===0?'Rest complete':'Rest '+Guided.timerText(reading.remaining).slice(3)):Guided.timerText(reading.elapsed);
+ }
+}
+function runExerciseClocks(){clearInterval(exerciseClock);updateExerciseClocks();exerciseClock=setInterval(updateExerciseClocks,1000);}
+
+</script><script>(function(root){
+ const TT=typeof TrainingTime!=='undefined'?TrainingTime:require('./training-time.js');
+ const day=86400000,parse=d=>Date.parse(d+'T00:00:00Z');
+ function weekRange(calendar,date){const index=Math.max(0,TT.weekIndex(calendar,date)),start=TT.dateAt(calendar,index*7),end=TT.dateAt(calendar,index*7+6);return {number:index+1,block:Math.floor(index/4)+1,weekInBlock:index%4+1,start,end};}
+ function build(state,program,date,createdAt=new Date().toISOString()){
+  const calendar=state.calendar||program.calendar,week=weekRange(calendar,date),inside=d=>typeof d==='string'&&d>=week.start&&d<=week.end;
+  const filter=map=>Object.fromEntries(Object.entries(map||{}).filter(([key])=>inside(key.slice(0,10))));
+  const keys=['sessionFlow','fingerReports','exerciseRpe','exerciseDose','strengthRecords','exerciseNotes','checklist','fingerTests'];
+  const select=data=>Object.fromEntries(keys.map(key=>[key,filter(data[key])]));
+  const data=select(state);data.logs=(state.logs||[]).filter(log=>inside(log.date)).map(log=>log.partialData?{...log,partialData:select(log.partialData)}:{...log});
+  data.weeklySends=filter(state.weeklySends);data.blockReviews=Object.fromEntries(Object.entries(state.blockReviews||{}).filter(([,r])=>inside(r.updated)));data.tripReviews=Object.fromEntries(Object.entries(state.tripReviews||{}).filter(([,r])=>inside(r.updated)));
+  const summary={savedSessions:data.logs.length,completedSessions:data.logs.filter(log=>!log.partial).length,partialSessions:data.logs.filter(log=>log.partial).length,minutes:data.logs.reduce((sum,log)=>sum+log.minutes,0),effortLoad:data.logs.reduce((sum,log)=>sum+(Number.isFinite(log.rpe)?log.minutes*log.rpe:0),0),sessionsWithoutRpe:data.logs.filter(log=>!Number.isFinite(log.rpe)).length};
+  return {format:'climbing-coach-weekly-report',schema:1,createdAt,app:program.app?.id||'self',week,athlete:{...(state.profile||{})},calendar,summary,loadOverview:typeof LoadCaps!=='undefined'?LoadCaps.summary(state,calendar,date):undefined,progressionPolicy:program.progression_policy,loadPolicy:program.load_policy,blockReviewQuestions:typeof BlockReview!=='undefined'?BlockReview.questions:undefined,sessionDefinitions:program.sessions,data,notes:'Includes records dated within this training week, including partial and in-progress sessions. Effort load is minutes × whole-session RPE; missing ratings remain missing. Exercise timings and rest settings are in sessionFlow.exerciseTimers. Share this file with your coach; it includes training and symptom information.'};
+ }
+ function weekComplete(state,program,date){const calendar=state.calendar||program.calendar,week=weekRange(calendar,date),ids=program.sessions.filter(s=>s.id!=='C'||state.profile.availability!=='2').map(s=>s.id);return ids.every(id=>(state.logs||[]).some(log=>log.session===id&&!log.partial&&log.date>=week.start&&log.date<=week.end));}
+ const api={weekRange,build,weekComplete};if(typeof module!=='undefined')module.exports=api;else root.WeekExport=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+// Files name the athlete (except the coach's own app) so the coach can tell exports apart.
+function fileStem(){const id=PROGRAM.app?.id;return 'climbing-coach-'+(id?id+'-':'');}
+// Phones open the share sheet (WhatsApp, email, Drive) with the file attached; elsewhere the file downloads.
+async function shareOrDownload(name,text,title){
+ const file=typeof File!=='undefined'?new File([text],name,{type:'application/json'}):null;
+ if(file&&navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title});return 'shared';}catch(e){if(e.name==='AbortError')return 'cancelled';}}
+ const url=URL.createObjectURL(new Blob([text],{type:'application/json'})),link=el('a');link.href=url;link.download=name;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);return 'downloaded';
+}
+function downloadWeek(date=localDate()){
+ const report=WeekExport.build(state,PROGRAM,date);
+ return shareOrDownload(fileStem()+'week-'+report.week.number+'-'+report.week.start+'.json',JSON.stringify(report,null,2),'Week '+report.week.number+' training file');
+}
+function offerWeekExport(){
+ const dialog=el('dialog',undefined,'rpe-dialog'),week=WeekExport.weekRange(calendarSettings(),localDate());dialog.append(el('h2','Export week '+week.number+' and send to coach?'),el('p','Send your weekly training file to your coach. On a phone this opens the share menu; otherwise the file downloads for you to send. It includes your session records, symptoms, effort ratings and notes.'));
+ const yes=el('button','Send week to coach','primary'),no=el('button','Not now');yes.onclick=()=>{downloadWeek();dialog.close();};no.onclick=()=>dialog.close();dialog.append(yes,no);dialog.onclose=()=>dialog.remove();document.body.append(dialog);dialog.showModal();
+}
+</script><script>(function(root){
+ function trends(state,today){
+  const end=Date.parse(today+'T23:59:59Z'),cut=end-28*86400000,records=new Map();
+  function collect(reports,flows){for(const[key,report]of Object.entries(reports||{})){
+   const date=key.slice(0,10),time=Date.parse(date+'T12:00:00Z');if(date>today||time<cut)continue;
+   const order=flows?.[key]?.startedAt||time,old=records.get(key);if(!old||old.order<=order)records.set(key,{date,order,before:report.before||{}});
+  }}
+  for(const log of state.logs||[])if(log.partialData)collect(log.partialData.fingerReports,log.partialData.sessionFlow);
+  collect(state.fingerReports,state.sessionFlow);
+  const result=[],ordered=[...records.values()].sort((a,b)=>a.date.localeCompare(b.date)||a.order-b.order);
+  for(const metric of ['pain','stiffness']){
+   const values=ordered.map(r=>r.before[metric]).filter(Number.isFinite),recent=values.slice(-3);if(recent.length<3)continue;
+   if(recent[2]-recent[0]>=2&&recent[1]>=recent[0]&&recent[2]>=recent[1])result.push({metric,type:'increasing',values:recent});
+   if(values.length>=6){const previous=values.slice(-6,-3),range=v=>Math.max(...v)-Math.min(...v);if(range(recent)>=3&&range(recent)>=range(previous)+2)result.push({metric,type:'more variable',values:recent,previous});}
+  }
+  return result;
+ }
+ const api={trends};if(typeof module!=='undefined')module.exports=api;else root.SymptomTrends=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+function showSymptomTrend(){
+ const changes=SymptomTrends.trends(state,localDate());if(!changes.length)return false;
+ const dialog=el('dialog',undefined,'rpe-dialog');dialog.append(el('h2','Check your recent finger symptoms'));
+ for(const change of changes)dialog.append(el('p','Your pre-session finger '+change.metric+' scores are '+change.type+': '+change.values.join(' \u2192 ')+'.'));
+ dialog.append(el('p','Review today’s planned intensity before you begin. This compares your reported scores; it does not predict injury.','muted'));
+ const details=el('details'),summary=el('summary','How this is detected');details.append(summary,el('p','Uses pre-session scores from the last 28 days. Increasing: the last three scores do not decrease and rise by at least 2 points overall. More variable: the range of the last three scores is at least 3 points and at least 2 points wider than the previous three. These are tracking rules, not clinical thresholds.','muted'));dialog.append(details);
+ const next=el('button','Continue to exercises','primary');next.onclick=()=>dialog.close();dialog.append(next);dialog.onclose=()=>{dialog.remove();renderSessions();};document.body.append(dialog);dialog.showModal();return true;
+}
+
+</script><script>(function(root){
+ const TT=typeof TrainingTime!=='undefined'?TrainingTime:require('./training-time.js');
+ const parse=d=>Date.parse(d+'T00:00:00Z'),days=86400000;
+ function weekStart(calendar,date){return TT.weekStart(calendar,date);}
+ function observations(state){
+  const list=[];
+  function add(data,suffix=''){
+   const flows=data.sessionFlow||{};
+   for(const[key,d]of Object.entries(data.exerciseDose||{})){const amount=d.attempts??d.wallMinutes;if(amount===undefined)continue;list.push({key:key+suffix,date:key.slice(0,10),component:key.slice(11),unit:d.attempts!==undefined?'attempts × RPE':'wall minutes × RPE',load:amount*d.intensity});}
+   for(const[key,d]of Object.entries(data.strengthRecords||{})){const reps=d.reps.reduce((sum,n)=>sum+n,0),weighted=d.weightKg>0;list.push({key:key+suffix,date:key.slice(0,10),component:key.slice(11),unit:weighted?'kg × reps':'reps × RPE',load:weighted?d.weightKg*reps:reps*d.rpe,weightKg:d.weightKg,deload:d.deload});}
+   for(const[key,rpe]of Object.entries(data.exerciseRpe||{})){
+    if(data.exerciseDose?.[key]||data.strengthRecords?.[key])continue;
+    const index=key.split(':')[2],flow=flows[key.slice(0,12)]||{},timer=flow.exerciseTimers?.[index];if(!timer?.startedAt||!timer.endedAt)continue;
+    list.push({key:key+suffix,date:key.slice(0,10),component:key.slice(11),unit:'block minutes × RPE',load:Math.max(0,timer.endedAt-timer.startedAt)/60000*rpe});
+   }
+  }
+  add(state);for(const log of state.logs||[])if(log.partialData)add(log.partialData,'#'+log.id);
+  return list;
+ }
+ // Blocks count training days only, so a pause sits between two blocks and belongs to neither.
+ function blockRange(calendar,date){const n=TT.elapsed(calendar,date),index=Math.max(0,Math.floor(n/28)),at=k=>TT.dateAt(calendar,k);return {number:index+1,start:at(index*28),end:at(index*28+27),previousStart:at(index*28-28),previousEnd:at(index*28-1),week:Math.floor((n-index*28)/7)+1};}
+ function category(component){const[id,index]=component.split(':');return id==='C'||(id==='A'&&index==='4')||(id==='B'&&index==='4')?'S&C':id==='A'?'Boulder':'Endurance';}
+ const introducible=['C:4'];
+ function required(state){return ['A:0','A:1','A:4','B:0','B:1','B:2','B:4',...(state.profile?.availability==='2'?[]:['C:0','C:1','C:2','C:3'])];}
+ function reference(state,calendar,date,component,unit){const range=blockRange(calendar,date);if(range.number===1)return null;const rows=observations(state).filter(x=>x.component===component&&x.unit===unit&&x.date>=range.previousStart&&x.date<=range.previousEnd);return rows.length?{start:range.previousStart,load:rows.reduce((sum,x)=>sum+x.load,0)}:null;}
+ function shape(component,week){return (component==='A:1'?[1,7/6,8/6,7/12]:[1,7/6,8/6,2/3])[week-1];}
+ function budget(state,calendar,date,component,unit,excludeKey){
+  const range=blockRange(calendar,date);if(range.number===1)return null;
+  const ref=reference(state,calendar,date,component,unit),rows=observations(state).filter(x=>x.component===component&&x.unit===unit&&x.date>=range.start&&x.date<=date&&x.key!==excludeKey),used=rows.reduce((sum,x)=>sum+x.load,0),maximum=(ref?.load||0)*1.1,remaining=Math.max(0,maximum-used);
+  const weights=Array.from({length:5-range.week},(_,i)=>shape(component,range.week+i)),allowance=remaining*weights[0]/weights.reduce((a,b)=>a+b,0);
+  return {baseline:ref?.load||0,maximum,used,remaining,allowance,missing:!ref||ref.load<=0,referenceBlock:range.number-1,referenceStart:range.previousStart,block:range.number,week:range.week,component};
+ }
+ function allowanceFor(limit,perUnit,quantum=1){
+  if(!limit||limit.missing||!(perUnit>0))return 0;
+  const weeks=Array.from({length:5-limit.week},(_,i)=>limit.week+i),sum=weeks.reduce((n,w)=>n+shape(limit.component,w),0);
+  let reserved=0;for(const w of weeks.slice(1)){const cost=perUnit*(limit.component==='A:1'&&w===4?7/8:1),quota=limit.remaining*shape(limit.component,w)/sum;reserved+=Math.floor((quota+1e-8)/cost/quantum)*quantum*cost;}
+  // Spend at most one rounded-up quantum above today's share, keeping later work reserved.
+  return Math.max(0,Math.min(limit.remaining-reserved,Math.ceil((limit.allowance-1e-8)/perUnit/quantum)*quantum*perUnit));
+ }
+ function summary(state,calendar,date){
+  const range=blockRange(calendar,date),all=observations(state).filter(x=>!TT.pauseAt(calendar,x.date)),current=all.filter(x=>x.date>=range.start&&x.date<=date),previous=all.filter(x=>x.date>=range.previousStart&&x.date<=range.previousEnd),groups=new Map();
+  for(const x of [...previous,...current]){const id=x.component+'|'+x.unit;if(!groups.has(id))groups.set(id,{component:x.component,unit:x.unit,load:0,baseline:0});}
+  for(const x of current)groups.get(x.component+'|'+x.unit).load+=x.load;
+  for(const x of previous)groups.get(x.component+'|'+x.unit).baseline+=x.load;
+  const components=[...groups.values()].map(x=>{const introduced=range.number>1&&x.baseline<=0&&introducible.includes(x.component)&&!all.some(y=>y.component===x.component&&y.date<range.start);return {...x,introduced,ratio:x.baseline>0?x.load/x.baseline:null,overLimit:!introduced&&range.number>1&&x.load>x.baseline*1.1+1e-8};});
+  // Fixed first-observed-block denominators keep unlike units comparable across months.
+  const scales=new Map();for(const x of all.filter(x=>x.date<=date)){const block=blockRange(calendar,x.date).number,id=x.component+'|'+x.unit;const entry=scales.get(id);if(!entry||block<entry.block)scales.set(id,{block,total:x.load});else if(block===entry.block)entry.total+=x.load;}
+  const categories=['Boulder','Endurance','S&C'].map(name=>{const items=components.filter(x=>category(x.component)===name&&!x.introduced),load=items.reduce((sum,x)=>sum+x.load/Math.max(scales.get(x.component+'|'+x.unit)?.total||0,.00001),0),baseline=items.reduce((sum,x)=>sum+x.baseline/Math.max(scales.get(x.component+'|'+x.unit)?.total||0,.00001),0);return {name,load,baseline,index:baseline>0?load/baseline*100:null,complete:items.length>0&&items.every(x=>x.baseline>0),overLimit:range.number>1&&load>baseline*1.1+1e-8};});
+  const total=categories.reduce((sum,x)=>sum+x.load,0),baselineTotal=categories.reduce((sum,x)=>sum+x.baseline,0),combinedIndex=baselineTotal>0?total/baselineTotal*100:null;
+  const missingBaselines=required(state).filter(id=>!components.some(x=>x.component===id&&x.baseline>0));
+  const logs=(state.logs||[]).filter(x=>!TT.pauseAt(calendar,x.date)),effort=logs.filter(x=>Number.isFinite(x.rpe)),effortCurrent=effort.filter(x=>x.date>=range.start&&x.date<=date).reduce((sum,x)=>sum+x.minutes*x.rpe,0),effortPrevious=effort.filter(x=>x.date>=range.previousStart&&x.date<=range.previousEnd).reduce((sum,x)=>sum+x.minutes*x.rpe,0);
+  const unrated=logs.filter(x=>x.date>=range.previousStart&&x.date<=date&&!Number.isFinite(x.rpe));const sessionEffort={complete:effortPrevious>0&&!unrated.length,unratedSessions:unrated.length,load:effortCurrent,baseline:effortPrevious,maximum:effortPrevious*1.1,index:effortPrevious>0?effortCurrent/effortPrevious*100:null,overLimit:range.number>1&&effortCurrent>effortPrevious*1.1+1e-8};
+  return {range,components,categories,combinedIndex,sessionEffort,missingBaselines,complete:range.number>1&&categories.every(x=>x.complete)&&!missingBaselines.length&&sessionEffort.complete,overLimit:range.number>1&&(components.some(x=>x.overLimit)||categories.some(x=>x.overLimit)||(combinedIndex!==null&&combinedIndex>110.00001)||sessionEffort.overLimit)};
+ }
+ function parseScheme(text){const m=String(text||'').match(/^(\d+)\s*[×x]\s*(\d+)$/),p=String(text||'').match(/^(\d+)\s*\+\s*(\d+)$/);return m?Array.from({length:Number(m[1])},()=>Number(m[2])):p?[Number(p[1]),Number(p[2])]:null;}
+ function strengthPlan(state,calendar,date,key,exercise,week,scheme){
+  const refs=(typeof PROGRAM!=='undefined'&&PROGRAM.strengthRefs)||{'Bench press':60,'Overhead press':30,'Leg press':60},cfg={step:{'Bench press':2.5,'Overhead press':2.5,'Leg press':5}[exercise]||1,reference:refs[exercise]??null};
+  const rows=Object.entries(state.strengthRecords||{}).filter(([k,v])=>k.slice(11)===key.slice(11)&&k.slice(0,10)<date&&!v.deload).sort((a,b)=>b[0].localeCompare(a[0])),last=rows[0]?.[1],prior=rows[1]?.[1],w=(week-1)%4+1;
+  if(!last)return blockRange(calendar,date).number>1&&!introducible.includes(key.slice(11))?{weight:null,reps:[],blocked:true,text:'No previous-block baseline for this exercise. Review its starting dose.'}:{weight:null,reps:null,text:'Establish your working weight and reps at the target effort.'};
+  if(summary(state,calendar,date).overLimit)return {weight:last.weightKg,reps:[],blocked:true,text:'Your recorded block load is already above its monthly ceiling. Omit extra work and review this block.'};
+  const unit=last.weightKg>0?'kg × reps':'reps × RPE',limit0=budget(state,calendar,date,key.slice(11),unit,key),limit=limit0&&limit0.missing&&introducible.includes(key.slice(11))?null:limit0,sessionKey=key.slice(0,12),pre=state.fingerReports?.[sessionKey]?.before||{},fatigue=state.sessionFlow?.[sessionKey]?.fatigue;
+  const recovered=rows.slice(0,2).every(([k])=>{const after=state.fingerReports?.[k.slice(0,12)]?.after;return after?.pain===0&&after?.stiffness===0;});
+  const good=recovered&&last.rpe<=8&&pre.pain===0&&pre.stiffness===0&&fatigue!==undefined&&fatigue<7&&!summary(state,calendar,date).overLimit&&(typeof SymptomTrends==='undefined'||!SymptomTrends.trends(state,date).length);
+  let weight=last.weightKg,reps=[...last.reps],total=reps.reduce((a,b)=>a+b,0);
+  const planned=exercise==='Finger edge lift'?parseScheme((scheme||[])[w-1]):null,start=exercise==='Finger edge lift'?parseScheme((scheme||[])[0]):null;
+  if(planned&&(w===4||w===1||good)){reps=planned;total=reps.reduce((a,b)=>a+b,0);if(w===3&&good&&prior&&prior.weightKg===last.weightKg&&last.weightKg>0&&prior.rpe<=8)weight=Math.round((weight+cfg.step)*100)/100;}
+  else if(planned&&start){reps=start;total=reps.reduce((a,b)=>a+b,0);}
+  else if(w===4){total=Math.max(1,Math.floor(total*.5));reps=[total];}
+  else if(good&&(w===2||w===3)){
+   if(w===3&&prior&&prior.weightKg===last.weightKg&&last.weightKg>0&&prior.rpe<=8)weight=Math.round((weight+cfg.step)*100)/100;
+   else{const i=reps.indexOf(Math.min(...reps));reps[i]++;total++;}
+  }
+  if(limit){const perRep=weight>0?weight:Math.max(last.rpe,exercise==='Trunk control'?6:7),allowed=Math.floor((allowanceFor(limit,perRep)+1e-8)/perRep);while(reps.reduce((a,b)=>a+b,0)>allowed&&reps.length){const i=reps.indexOf(Math.max(...reps));reps[i]--;if(!reps[i])reps.splice(i,1);}if(!reps.length)return {weight,reps:[],limit,blocked:true,text:limit.missing?'No previous-block baseline for this exercise. Review its starting dose before adding work.':'Your remaining block budget is reserved for the remaining sessions. Omit extra work for this exercise.'};}
+  return {weight,reps,limit,text:(w===4?'Deload: about half the latest build-week reps.':weight>last.weightKg?'Eligible weight increase.':reps.reduce((a,b)=>a+b,0)>last.reps.reduce((a,b)=>a+b,0)?'Eligible increase: one extra rep total.':'Repeat your latest controlled build dose.')+(limit?' Block '+limit.block+' total ceiling: '+Math.round(limit.maximum*10)/10+' '+unit+' including the deload. Later sessions retain a share of the budget.':' This first four-week block establishes your monthly baseline.')};
+ }
+ const api={introducible,parseScheme,observations,blockRange,shape,reference,budget,allowanceFor,summary,strengthPlan};if(typeof module!=='undefined')module.exports=api;else root.LoadCaps=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>(function(root){
+ // Tindeq finger tests are measurements, not training dose: they are never read by LoadCaps.observations().
+ const G=9.80665;
+ const sides=t=>['left','right'].map(s=>t?.[s]?.peakKg).filter(n=>Number.isFinite(n)&&n>0);
+ function weakest(test){const v=sides(test);return v.length===2?Math.min(...v):null;}
+ function latest(state,date,type='peakForce'){
+  const rows=Object.entries(state?.fingerTests||{}).filter(([k,v])=>k.slice(0,10)<=date&&v.type===type&&!v.aborted&&weakest(v)!==null).sort((a,b)=>b[0].localeCompare(a[0]));
+  return rows.length?{date:rows[0][0].slice(0,10),test:rows[0][1],peakKg:weakest(rows[0][1])}:null;
+ }
+ function compare(previous,current){
+  const p=weakest(previous),c=weakest(current),l=current?.left?.peakKg,r=current?.right?.peakKg;
+  return {changePct:p&&c?Math.round((c-p)/p*1000)/10:null,asymmetryPct:l>0&&r>0?Math.round(Math.abs(l-r)/Math.max(l,r)*1000)/10:null,dropFlag:!!(p&&c&&(c-p)/p<-0.1)};
+ }
+ // Suggested C:4 target-force range from the weaker hand, rounded to 0.5 kg.
+ function suggest(test,pct){const w=weakest(test);return w&&Array.isArray(pct)?pct.map(x=>Math.round(w*x/100*2)/2):null;}
+ const api={G,weakest,latest,compare,suggest,newtons:kg=>Math.round(kg*G*10)/10};
+ if(typeof module!=='undefined')module.exports=api;else root.FingerTests=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>function askStrengthRecord(key,intensity,onSave){
+ const id=key.split(':')[1],i=Number(key.split(':')[2]),session=PROGRAM.sessions.find(s=>s.id===id),exercise=session.steps[i][0],finger=exercise==='Finger edge lift',old=state.strengthRecords?.[key],dialog=el('dialog',undefined,'rpe-dialog');
+ dialog.append(el('h2','Record '+exercise),el('p',finger?'Use the same edge and set-up each time. Record the target force per hand in kg and the number of 10 s holds per hand in each set.':'Use the same setup each time. Record total external kg, combining both dumbbells; use 0 for bodyweight.','muted'));
+ const load=el('label',finger?'Target force per hand (kg)':'Working weight (kg)'),weight=el('input');weight.type='number';weight.min='0';weight.max='1000';weight.step='0.1';weight.required=true;weight.value=old?String(old.weightKg):'';load.append(weight);
+ const options=el('div',undefined,'grade-options'),reference=PROGRAM.strengthRefs?.[exercise]??0;for(const n of [...new Set([old?.weightKg,reference])].filter(n=>n!==undefined)){const b=el('button',n+' kg');b.onclick=()=>{weight.value=String(n);update();};options.append(b);}
+ const label=el('label',finger?'Holds per hand in each set':'Reps in each work set'),reps=el('input');reps.placeholder='For example: 5,5';reps.required=true;reps.value=old?old.reps.join(','):'';label.append(reps);const repOptions=el('div',undefined,'grade-options');for(const value of (finger?['3','4,4','5,4','5,5','3,3','4,3']:['5','5,5','6,5','6,6','7,7','8,8'])){const b=el('button',value.includes(',')?value.split(',').join(' + ')+' reps':value+' reps');b.onclick=()=>{reps.value=value;update();};repOptions.append(b);}
+ const feedback=el('p',undefined,'muted'),plan=LoadCaps.strengthPlan(state,calendarSettings(),trainingDate,key,exercise,Planning.context(trainingDate,calendarSettings().start,calendarSettings().days).week,finger?Progression.fingerScheme(Planning.context(trainingDate,calendarSettings().start,calendarSettings().days).week,PROGRAM.blocks).weeks:undefined);
+ const parse=()=>reps.value.split(',').map(n=>Number(n.trim())),save=el('button','Save strength work','primary');
+ function update(){const values=parse(),kg=Number(weight.value);save.disabled=weight.value===''||!weight.checkValidity()||!values.length||values.length>12||values.some(n=>!Number.isInteger(n)||n<1||n>50);const dose=kg>0?kg*values.reduce((a,b)=>a+b,0):intensity*values.reduce((a,b)=>a+b,0);feedback.textContent=plan.limit&&(dose>plan.limit.remaining)?'This exceeds your remaining four-week exercise budget. Record what you actually did and review the next prescription.':plan.text;}
+ weight.oninput=update;reps.oninput=update;save.onclick=()=>{if(save.disabled)return;const record={exercise,weightKg:Number(weight.value),reps:parse(),rpe:intensity,deload:Progression.cycle(Planning.context(trainingDate,calendarSettings().start,calendarSettings().days).week)===4};dialog.close();onSave(record);};const cancel=el('button','Cancel');cancel.onclick=()=>dialog.close();dialog.append(load,options,label,repOptions,feedback,save,cancel);dialog.onclose=()=>dialog.remove();document.body.append(dialog);update();dialog.showModal();
+}
+
+function askFingerTest(date){
+ const rig=PROGRAM.athlete?.tindeq||{},key=date+':C:4',old=(state.fingerTests||{})[key]||{},dialog=el('dialog',undefined,'rpe-dialog'),previous=FingerTests.latest({fingerTests:Object.fromEntries(Object.entries(state.fingerTests||{}).filter(([k])=>k!==key))},date);
+ dialog.append(el('h2','Record finger test'),el('p','Tindeq peak force on your usual edge and set-up'+(rig.setup?' ('+rig.setup+')':'')+', one arm, best of three pulls per hand. Record kg (the Tindeq native unit). Skip the test unless you are symptom-free; stop at any pain.','muted'));
+ if(previous)dialog.append(el('p','Previous test '+previous.date+': weaker hand '+previous.peakKg+' kg.','muted'));
+ const field=(label,value)=>{const l=el('label',label),i=el('input');i.type='number';i.min='0';i.max='1000';i.step='0.1';i.value=value??'';l.append(i);dialog.append(l);return i;};
+ const left=field('Left hand peak (kg)',old.left?.peakKg),right=field('Right hand peak (kg)',old.right?.peakKg),mass=field('Body mass (kg, optional)',old.bodyMassKg);
+ const aborted=el('label','Test stopped early for symptoms'),box=el('input');box.type='checkbox';box.checked=!!old.aborted;aborted.prepend(box);dialog.append(aborted);
+ const notes=el('textarea');notes.placeholder='Edge depth, grip, set-up or other notes';notes.maxLength=1000;notes.value=old.notes||'';dialog.append(notes);
+ const feedback=el('p',undefined,'muted'),save=el('button','Save finger test','primary'),cancel=el('button','Cancel');
+ const read=()=>{const n=i=>i.value===''?null:Number(i.value);return {type:'peakForce',...(rig.edgeMm?{edgeMm:rig.edgeMm}:{}),grip:'half crimp',setup:rig.setup||'',left:{peakKg:n(left)},right:{peakKg:n(right)},bodyMassKg:n(mass),aborted:box.checked,symptomsDuring:old.symptomsDuring||0,notes:notes.value};};
+ function update(){const t=read(),ok=t.left.peakKg>0&&t.right.peakKg>0&&(t.bodyMassKg===null||(t.bodyMassKg>=20&&t.bodyMassKg<=300));save.disabled=!ok;if(!ok){feedback.textContent='';return;}const c=FingerTests.compare(previous?.test,t),pct=PROGRAM.blocks?.find(b=>b.strengthSchemes?.['C:4']?.targetPctPeak)?.strengthSchemes['C:4'].targetPctPeak,range=FingerTests.suggest(t,pct);feedback.textContent=(c.changePct!==null?'Change since last test: '+c.changePct+'%. ':'')+(c.asymmetryPct!==null?'Left/right difference: '+c.asymmetryPct+'%. ':'')+(c.dropFlag?'Peak fell by more than 10%: hold intensity next block and review recovery. ':'')+(range?'Suggested next-block target: '+range[0]+'–'+range[1]+' kg per hand.':'');}
+ [left,right,mass,box].forEach(i=>i.oninput=update);box.onchange=update;
+ save.onclick=()=>{if(save.disabled)return;const next={...state,fingerTests:{...(state.fingerTests||{}),[key]:read()}};if(!Coach.validBackup(next)){notice('The test could not be saved. Check the values.');return;}if(persist(next)){dialog.close();renderSessions();}};
+ cancel.onclick=()=>dialog.close();dialog.append(feedback,save,cancel);dialog.onclose=()=>dialog.remove();document.body.append(dialog);update();dialog.showModal();
+}
+</script><script>(function(root){
+ const TT=typeof TrainingTime!=='undefined'?TrainingTime:require('./training-time.js');
+ const clone=x=>JSON.parse(JSON.stringify(x));
+ const cycle=week=>(week-1)%4+1;
+ const blocksOf=options=>options?.blocks||(typeof PROGRAM!=='undefined'?PROGRAM.blocks:null)||[];
+ function blockConfig(week,blocks){return (blocks||[]).find(b=>b.number===Math.floor((week-1)/4)+1)||null;}
+ function readiness(state,key,blocks){
+  if(typeof LoadCaps!=='undefined'&&LoadCaps.summary(state,state.calendar||{start:'2026-10-23',days:{A:5,B:2,C:0}},key.slice(0,10)).overLimit)return {allow:false,reason:'A recorded individual, category or combined load is above the monthly cap. Do not add load.'};
+  if(typeof SymptomTrends!=='undefined'&&SymptomTrends.trends(state,key.slice(0,10)).length)return {allow:false,reason:'Hold progression: recent finger scores are increasing or more variable.'};
+  if(typeof LoadCaps!=='undefined'){const overview=LoadCaps.summary(state,state.calendar||{start:'2026-10-23',days:{A:5,B:2,C:0}},key.slice(0,10));if(overview.range.number>1&&!overview.complete)return {allow:false,reason:'Complete the previous block’s load records before increasing the next block.'};}
+  const date=key.slice(0,10),id=key.slice(-1),pre=state.fingerReports?.[key]?.before||{},flow=state.sessionFlow?.[key]||{};
+  if((pre.pain||0)>0||(pre.stiffness||0)>0)return {allow:false,reason:'Hold progression: you reported finger symptoms today.'};
+  if(flow.fatigue===undefined||pre.pain===undefined||pre.stiffness===undefined)return {allow:false,reason:'Complete your check-in before deciding on progression.'};
+  if(flow.fatigue>=7)return {allow:false,reason:'Hold progression: your starting fatigue is high.'};
+  const prior=(state.logs||[]).filter(x=>x.session===id&&!x.partial&&x.date<date&&cycle(TT.weekIndex(state.calendar||{start:'2026-10-23'},x.date)+1)!==4).sort((a,b)=>b.date.localeCompare(a.date))[0];
+  if(!prior)return {allow:false,reason:'Establish a logged baseline before increasing the dose.'};
+  if(prior.quality==='poor'||prior.rpe>=9||prior.pain>0)return {allow:false,reason:'Repeat or reduce the dose: your previous session was very hard, lost quality or recorded pain.'};
+  if(Date.parse(date)-Date.parse(prior.date)>21*86400000)return {allow:false,reason:'Re-establish your baseline after a longer gap before increasing load.'};
+  const prevKey=prior.date+':'+id,after=state.fingerReports?.[prevKey]?.after||{};
+  if(after.pain===undefined||after.stiffness===undefined)return {allow:false,reason:'Record recovery and your last symptom check-out before progressing.'};
+  if(after.pain>0||after.stiffness>0)return {allow:false,reason:'Hold progression and review the finger response from your previous session.'};
+  const effort=Object.entries(state.exerciseRpe||{}).filter(([k])=>k.startsWith(prevKey+':')).map(([,v])=>v);
+  if(!effort.length||effort.some(v=>v>=9))return {allow:false,reason:'Repeat the baseline until your previous exercise effort and recovery support an increase.'};
+  const notes=Object.entries(state.exerciseNotes||{}).filter(([k])=>k.startsWith(prevKey+':')).map(([,v])=>v);
+  const controlled=prior.quality==='good'||(id==='B'&&notes.some(n=>n.circuit?.choice==='All bouts as planned'&&['None','Light and manageable'].includes(n.pump?.choice)&&['Fully recovered','Mostly recovered'].includes(n.recovery?.choice)));
+  if(!controlled)return {allow:false,reason:'Confirm controlled movement and recovery in your previous notes before adding load.'};
+  const dose=state.exerciseDose?.[prevKey+':1'];
+  if(['A','B'].includes(id)&&(!dose||!(dose.intensity>0)||!((id==='A'?dose.attempts:dose.wallMinutes)>0)))return {allow:false,reason:'Record actual attempts or wall time and exercise RPE to establish your load baseline.'};
+  const calendarNow=state.calendar||{start:'2026-10-23',days:{A:5,B:2,C:0}},blockNow=blockConfig(LoadCaps.blockRange(calendarNow,date).number*4-3,blocks),circuitMax=blockNow?.gate?.['B:1']||4;
+  if(id==='B'&&dose.intensity>circuitMax)return {allow:false,reason:'Your circuit effort was above the capacity target. Ease the circuit before adding wall time.'};
+  return {allow:true,previous:prior,dose,reason:'Use the next load range only with controlled movement, stable recovery and stable fingers. Keep intensity steady while adding volume.'};
+ }
+ function blockStatus(state,calendar,date){
+  const range=LoadCaps.blockRange(calendar,date);if(range.number===1)return {available:true};
+  if(range.number>2)return {available:false,reason:'Review your next block before setting exercise doses.'};
+  if(state.blockReviews?.[calendar.start]?.status!=='complete')return {available:false,reason:'Complete your Assess & establish questionnaire before starting block 2.'};
+  if(!LoadCaps.summary(state,calendar,date).complete)return {available:false,reason:'Complete the previous block’s exercise load records before setting block 2 doses.'};
+  return {available:true};
+ }
+ function prescribe(base,week,state,key,options={}){
+  const s=clone(base),w=cycle(week),calendar=state?.calendar||{start:'2026-10-23',days:{A:5,B:2,C:0}},date=key?.slice(0,10),blk=blockConfig(week,blocksOf(options)),gate=state&&key&&!options.preview?readiness(state,key,blocksOf(options)):{allow:true,reason:'Planned build: progress only when effort, quality, recovery and fingers support it.'};
+  for(const [index,o] of Object.entries(blk?.stepOverrides?.[s.id]||{})){const step=s.steps[Number(index)];if(!step)continue;if(o.name)step[0]=o.name;if(o.dose)step[1]=o.dose;if(o.detail&&index!=='1')step[2]=o.detail;if(o.detailAppend&&index!=='1')step[2]+=' '+o.detailAppend;}
+  for(const [component,value] of Object.entries(blk?.targetRpe||{})){const [id,index]=component.split(':');if(id===s.id&&s.targetRpe[Number(index)]!==undefined)s.targetRpe[Number(index)]=value;}
+  s.cycleWeek=w;s.deload=w===4;s.progressionMessage=w===4?'Deload: reduce main volume by about half of the latest build week. This work counts in your four-week total.':w===1?'Establish a repeatable starting dose for this block.':gate.reason;
+  if(['A','B'].includes(s.id)){
+   const isA=s.id==='A',kind=isA?'attempts':'wallMinutes',unit=isA?'attempts':'wall min',component=s.id+':1';
+   const doseRows=state&&key?Object.entries(state.exerciseDose||{}).filter(([k,v])=>k.slice(0,10)<date&&k.slice(11)===component&&v[kind]>0&&cycle(TT.weekIndex(calendar,k.slice(0,10))+1)!==4).sort((a,b)=>a[0].localeCompare(b[0])):[];
+   const range=state&&key?LoadCaps.blockRange(calendar,date):null,currentRows=doseRows.filter(([k])=>k.slice(0,10)>=range.start),first=currentRows[0]?.[1],last=doseRows.at(-1)?.[1];
+   const intensity=w===4?(isA?7:3):(first?.intensity||last?.intensity||blk?.intensity?.[component]||(isA?8:3)),limit=state&&key?LoadCaps.budget(state,calendar,date,component,isA?'attempts × RPE':'wall minutes × RPE',key+':1'):null;
+   let amount=(first?.[kind]||(isA?6:9))*[1,7/6,8/6,2/3][w-1];
+   if(w===4)amount=last?last[kind]*.5:(isA?4:6);
+   if(limit&&w!==4){amount=LoadCaps.allowanceFor(limit,intensity,isA?1:.25)/intensity;if(w>1&&last)amount=Math.min(amount,isA?last[kind]+1:last[kind]*1.2);}
+   if(!gate.allow&&w!==4)amount=Math.min(amount,last?.[kind]||(isA?6:9));
+   if(limit)amount=Math.min(amount,LoadCaps.allowanceFor(limit,intensity,isA?1:.25)/intensity);
+   if(state&&key&&LoadCaps.summary(state,calendar,date).overLimit)amount=0;
+   amount=isA?Math.floor(amount+1e-8):Math.floor((amount+1e-8)*4)/4;
+   s.steps[1][1]=amount>0?amount+' '+unit+' total'+(w===4?' · deload':''):'Optional · omit (block load budget)';
+   s.targetRpe[1]=w===4?(isA?'6–7':'2–3'):first||last?String(intensity):isA?'8–9':'3–4';
+   s.steps[1][2]=amount>0?(isA?'Choose 2–3 hard problems or sequences. Rest 3–5 minutes between demanding attempts. Keep difficulty steady while adding attempts. Stop when movement quality drops. Prefer open-hand, half-crimp, slopers and big pockets; no monos or small crimps in this block. Count only committed attempts at RPE 7 or above; warm-up tries belong in Prepare.':'Use the same easy circuit with light, manageable pump. Divide the total wall time into three comfortable bouts, or four if needed. Rest 3 minutes between bouts. Exclude rest from your wall-time total. Keep circuit difficulty steady while adding time.'):'Your previous-block baseline is missing or your available block budget is used. Skip additional work and review your records.';
+   const o1=blk?.stepOverrides?.[s.id]?.[1];if(amount>0&&o1){if(o1.detail)s.steps[1][2]=o1.detail;if(o1.detailAppend)s.steps[1][2]+=' '+o1.detailAppend;}
+   if(w===4){s.steps[1][2]+=' Keep effort easier and finish fresh.';s.steps[2][1]=isA?'Optional · 5 min easy':'5–10 min easy';}
+   s.progressionMessage+=(limit?' Block '+limit.block+' '+(isA?'attempt':'wall-time')+' load ceiling: '+round(limit.maximum)+'. Recorded so far: '+round(limit.used)+'. This session shares the remaining budget with later weeks.':' Weeks 1–3 may build more steeply; the first block establishes your monthly total.');
+  }
+  for(let i=0;i<s.steps.length;i++){
+   const step=s.steps[i],main=['Bench press','Overhead press','Leg press'].includes(step[0]),accessory=['Hip hinge or unilateral legs','Trunk control'].includes(step[0]),finger=step[0]==='Finger edge lift';
+   if(finger){fingerStep(s,i,w,blk,state,key,calendar,date,week);continue;}
+   if(main){step[1]=w===4?'1 × 6 · easy':w===3?'2 × 6 · eligible kg increase':w===2?'6 + 5 reps':'2 × 5';s.targetRpe[i]=w===4?'6':'7–8';}
+   if(accessory)step[1]=step[0]==='Trunk control'?(w===4?'1 × 7':w===3?'2 × 7':w===2?'7 + 6 reps':'2 × 6'):(w===4?'1 × 4':w===3?'1 × 8':w===2?'1 × 7':'1 × 6');
+   if(state&&key&&(main||accessory)){
+    const plan=LoadCaps.strengthPlan(state,calendar,date,key+':'+i,step[0],week);
+    if(plan.blocked){step[1]='Optional · omit (block load budget)';step[2]=plan.text;continue;}
+    if(plan.weight!==null&&plan.reps)step[1]=(plan.weight>0?plan.weight+' kg · ':'')+plan.reps.join(' + ')+' reps';
+    step[2]+=' '+plan.text;
+   }
+  }
+  if(w===4)s.duration=s.id==='C'?'30–40 min · Deload · Regular gym':'50–65 min · Deload · Bouldering gym';
+  return s;
+ }
+ const fingerDefault={weeks:['2 × 4','5 + 4','2 × 5','1 × 5'],targetRpe:'3–4',restSec:50};
+ function fingerScheme(week,blocks){return {...fingerDefault,...(blockConfig(week,blocks)?.strengthSchemes?.['C:4']||{})};}
+ function fingerStep(s,i,w,blk,state,key,calendar,date,week){
+  const rig=typeof PROGRAM!=='undefined'&&PROGRAM.athlete?.tindeq?.setup;if(rig&&!s.steps[i][2].includes(rig))s.steps[i][2]+=' Set-up: '+rig+'.';
+  const step=s.steps[i],scheme=fingerScheme(week,blk?[blk]:[]),rpe=blk?.targetRpe?.['C:4']||scheme.targetRpe,low=Number(String(rpe).match(/\d+/)?.[0]||3);
+  step[1]='Optional · '+scheme.weeks[w-1]+' holds per hand';s.targetRpe[i]=w===4?String(Math.max(3,low-1)):rpe;
+  if(scheme.restSec&&scheme.restSec!==50)step[2]=step[2].replace('about 50 s',scheme.restSec>=120?scheme.restSec/60+' minutes':scheme.restSec+' s');
+  if(scheme.targetPctPeak&&typeof FingerTests!=='undefined'&&state&&date){const peak=FingerTests.latest(state,date),range=peak&&FingerTests.suggest(peak.test,scheme.targetPctPeak);step[2]+=range?' Target force '+range[0]+'–'+range[1]+' kg per hand ('+scheme.targetPctPeak.join('–')+'% of your weaker-hand peak of '+peak.peakKg+' kg on '+peak.date+'). Do not rise more than '+Math.round((scheme.maxRiseVsPrevBlock||.15)*100)+'% above your previous block kg.':' Record a peak-force test first to set a percentage target; until then use a force that feels like RPE '+rpe+'.';}
+  if(state&&key){
+   const plan=LoadCaps.strengthPlan(state,calendar,date,key+':'+i,step[0],week,scheme.weeks);
+   if(plan.blocked){step[1]='Optional · omit (block load budget)';step[2]=plan.text;return;}
+   if(plan.weight!==null&&plan.reps)step[1]='Optional · '+(plan.weight>0?plan.weight+' kg · ':'')+plan.reps.join(' + ')+' holds per hand';
+   step[2]+=' '+plan.text;
+  }
+ }
+ function round(n){return Math.round(n*10)/10;}
+ const api={cycle,readiness,prescribe,blockStatus,blockConfig,fingerScheme};if(typeof module!=='undefined')module.exports=api;else root.Progression=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>(function(root){
+ const questions=[
+ ['consistency','How consistently did you complete your planned sessions?',['Almost all (at least 75%)','About half to three quarters','Less than half','I could not establish a routine','Other']],
+ ['hard_moves','Compared with week 1, how do familiar hard problems feel?',['More moves or sends at the same effort','Similar performance with less effort','About the same','Harder or less controlled','I cannot compare like-for-like problems','Other']],
+ ['limiter','What most often stops you on challenging climbing?',['A single difficult move while fresh','Linking moves I can do separately','Footwork or movement efficiency','Confidence or committing to moves','Finger symptoms','I am not sure yet','Other']],
+ ['capacity','How did your repeatable circuit change?',['More controlled time on the same circuit','Same time with less pump','About the same','Less time or more pump','I changed the circuit so cannot compare','I did not establish a circuit','Other']],
+ ['bout_recovery','How well do you recover during the planned circuit rests?',['Fully before each repeat','Mostly, with mild remaining pump','Not enough to repeat cleanly','Less well with each repeat','I did not assess this','Other']],
+ ['boulder_level','What is your hardest recent bouldering send?',['Below 7A','7A / 7A+','7B / 7B+','7C / 7C+','8A or above','No recent send or no reliable grade','Other']],
+ ['finger_trend','Across the block, how have your finger symptoms changed?',['Improved','Stayed absent','Stayed similar and manageable','Become more frequent or persistent','Varied a lot','I cannot tell from my records','Other']],
+ ['next_day','How do your fingers usually feel the morning after climbing?',['Back to my usual baseline','Slightly worse but settle that day','Worse for more than a day','My response varies widely','I have not tracked this','Other']],
+ ['recovery','How recovered do you feel before your next training visit?',['Usually fresh and ready','Occasionally tired but movement stays good','Often tired and performance suffers','Sleep, work or study demands dominate recovery','I am not sure','Other']],
+ ['lifting','How has supplementary lifting affected climbing?',['Enjoyable and no noticeable interference','Bench most often affects my next session','OHP most often affects my next session','Leg work or soreness most often interferes','Lifting feels too demanding overall','I did not do enough to judge','Other']],
+ ['time','How well do the sessions fit your available time?',['Fit comfortably','Occasionally need shortening','Often too long','I usually cut the same part','Other']],
+ ['motivation','How do you feel about continuing this structure?',['Motivated and enjoying it','Mostly positive but want more variety','Too restrictive','Too demanding alongside work or study','I want a simpler routine','Other']],
+ ['ropes','How often can you realistically climb on ropes next block?',['Weekly','Every two weeks','About monthly','Occasional trips only','No access currently','Other']],
+ ['route_visit','When could you next try or inspect '+((typeof PROGRAM!=='undefined'&&PROGRAM.goal?.route)||'your goal route')+'?',['I have already visited during this block','Within four weeks','Within one to three months','Later, with dates not yet clear','No visit is currently feasible','Other']],
+ ['priority','What would you most like to improve next?',['Hard-move strength or power','Sustaining and linking moves','Technique and efficiency','Managing symptoms and training tolerance','Consistency and enjoyment','I want help deciding','Other']]
+ ];
+ const api={questions};if(typeof module!=='undefined')module.exports=api;else root.BlockReview=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+function openBlockReview(){
+ const key=calendarSettings().start;
+ openQuestionnaire({label:'Assess & establish',questions:BlockReview.questions,prior:(state.blockReviews||{})[key],summaryTitle:'Review your first block',summaryText:'Compare these answers with your training records before choosing the next block.',saveLabel:'Save block review',store:r=>persist({...state,blockReviews:{...(state.blockReviews||{}),[key]:{block:1,...r}}})});
+}
+function openQuestionnaire(q){
+ const prior=q.prior||{},answers=JSON.parse(JSON.stringify(prior.answers||{}));let index=prior.status==='complete'?0:(prior.questionIndex||0);
+ const dialog=el('dialog',undefined,'rpe-dialog');document.body.append(dialog);dialog.onclose=()=>dialog.remove();
+ function saveDraft(){return q.store({status:'draft',questionIndex:index,updated:localDate(),answers});}
+ function draw(){dialog.replaceChildren();
+  if(index>=q.questions.length){dialog.append(el('h2',q.summaryTitle),el('p',q.summaryText));
+   for(const[id,title]of q.questions){const a=answers[id];dialog.append(el('h3',title),el('p',a?a.choice+(a.choice==='Other'&&a.other?' — '+a.other:''):'Not answered','muted'));}
+   if(q.advice){const advice=q.advice(answers);dialog.append(el('p',advice.text,advice.level==='go'?'muted':'symptom-advice'));}
+   const save=el('button',q.saveLabel,'primary');save.onclick=()=>{if(q.store({status:'complete',updated:localDate(),completed:localDate(),answers})){dialog.close();render();}};dialog.append(save);
+  }else{
+   const[id,title,options]=q.questions[index],a=answers[id]||{};dialog.append(el('p',q.label+' · '+(index+1)+' of '+q.questions.length,'muted'),el('h2',title));const choices=el('div',undefined,'note-options'),text=el('textarea');text.placeholder='Optional detail';text.maxLength=1000;text.value=a.other||'';text.hidden=a.choice!=='Other';
+   for(const choice of options){const b=el('button',choice);b.setAttribute('aria-pressed',String(a.choice===choice));b.onclick=()=>{answers[id]={choice,other:text.value};text.hidden=choice!=='Other';for(const n of choices.querySelectorAll('button'))n.setAttribute('aria-pressed',String(n===b));next.disabled=false;next.hidden=choice!=='Other';if(choice==='Other'){saveDraft();text.focus();}else{index++;if(saveDraft())draw();else index--;}};choices.append(b);}
+   text.oninput=()=>{if(answers[id])answers[id].other=text.value;};const next=el('button','Next','primary');next.disabled=!a.choice;next.hidden=a.choice!=='Other';next.onclick=()=>{index++;if(saveDraft())draw();else index--;};dialog.append(choices,text,next);
+  }
+  const controls=el('div',undefined,'actions');if(index>0){const back=el('button','Back');back.onclick=()=>{index--;draw();};controls.append(back);}const later=el('button','Save & finish later');later.onclick=()=>{if(saveDraft())dialog.close();};controls.append(later);dialog.append(controls);
+ }
+ draw();dialog.showModal();
+}
+</script><script>(function(root){
+ // One short questionnaire after a training pause that was a climbing trip; trip days themselves are not logged.
+ const questions=[
+ ['climb_days','How many days did you climb on the trip?',['None','1–3','4–6','7–9','10 or more','Other']],
+ ['style','What did you mostly climb?',['Sport routes','Bouldering','A mix of routes and boulders','Mostly easy mileage','Other']],
+ ['effort','How hard was a typical climbing day?',['Easy, plenty in reserve','Moderate','Hard, near my limit','Very hard, often to failure','Other']],
+ ['hardest','What was your hardest send (route grade, or use Other for a boulder grade)?',['Below 7a','7a–7b+','7c–8a','8a+ or harder','No notable send','Other']],
+ ['fingers_trip','How did your fingers respond during the trip?',['No symptoms','Mild, gone by the next morning','Mild on several days','Symptoms lasting more than 24 h','Sharp pain, a pop or swelling','Other']],
+ ['now','How do your fingers and body feel now?',['Fresh and ready to train','Tired, but no finger symptoms','Finger stiffness or soreness remains','Skin needs a few more days','Other']]
+ ];
+ const redFlag='Sharp pain, a pop or swelling',hold=['Symptoms lasting more than 24 h','Finger stiffness or soreness remains'];
+ function pausesOf(program){return [...(program?.pauses||[])].filter(p=>p.review).sort((a,b)=>a.start.localeCompare(b.start));}
+ // The questionnaire opens on the trip's last day and stays offered for six weeks or until completed.
+ function due(state,program,date){return pausesOf(program).find(p=>{const from=p.tripEnd||p.end,until=new Date(Date.parse(p.end+'T00:00:00Z')+42*86400000).toISOString().slice(0,10);return date>=from&&date<=until&&state.tripReviews?.[p.start]?.status!=='complete';})||null;}
+ function advice(answers){
+  const a=id=>answers?.[id]?.choice;
+  if(a('fingers_trip')===redFlag)return {level:'stop',text:'Sharp pain, a pop or swelling is a red flag: do no finger loading and see a physio or doctor before returning to training.'};
+  if(hold.includes(a('fingers_trip'))||hold.includes(a('now')))return {level:'hold',text:'Hold finger load: begin the next block at its week-1 dose only once your check-in shows 0 pain and 0 stiffness. Skip the finger edge lift until then.'};
+  if(a('effort')==='Very hard, often to failure'||a('climb_days')==='10 or more')return {level:'ease',text:'A big trip: keep the first week back easy and finish sessions fresh.'};
+  return {level:'go',text:'Fingers responded well. Start the next block at its planned week-1 dose.'};
+ }
+ const api={questions,due,advice};if(typeof module!=='undefined')module.exports=api;else root.TripReview=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+function openTripReview(pause){
+ const key=pause.start;
+ openQuestionnaire({label:pause.title||'Trip',questions:TripReview.questions,prior:(state.tripReviews||{})[key],summaryTitle:'After your trip',summaryText:'These answers set how you return to training. Trip days themselves are not logged.',saveLabel:'Save trip review',advice:TripReview.advice,store:r=>persist({...state,tripReviews:{...(state.tripReviews||{}),[key]:{trip:key,...r}}})});
+}
+</script><script>(function(root){
+ const TT=typeof TrainingTime!=='undefined'?TrainingTime:require('./training-time.js');
+ const grades=['6A or below','6A+ / 6B','6B+ / 6C','6C+ / 7A','7A+','7B','7B+','7C','7C+','8A or above','No send this week','Other'];
+ function eligible(state,program,date,id){const cfg=state.calendar||program.calendar;const ids=program.sessions.filter(s=>s.id!=='C'||state.profile.availability!=='2').map(s=>s.id);const start=weekStart(cfg.start,date);const order=weekday=>((weekday-new Date(cfg.start+'T00:00:00Z').getUTCDay()+7)%7);const last=ids.sort((a,b)=>order(cfg.days[a])-order(cfg.days[b])).at(-1);return id===last&&!(state.weeklySends||{})[start];}
+ function weekStart(start,date){return TT.weekStart({start},date);}
+ const api={grades,eligible,weekStart};if(typeof module!=='undefined')module.exports=api;else root.WeeklySend=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+function askWeeklySend(){
+ const key=WeeklySend.weekStart(calendarSettings().start,localDate()),prior=(state.weeklySends||{})[key]||{};let selected=prior.grade;
+ const dialog=el('dialog',undefined,'rpe-dialog');dialog.append(el('h2','What was your hardest boulder send this week?'));const choices=el('div',undefined,'grade-options'),other=el('textarea');other.placeholder='Optional grade, problem or detail';other.maxLength=1000;other.value=prior.detail||'';other.hidden=selected!=='Other';const save=el('button','Save hardest send','primary');save.disabled=!selected;
+ for(const grade of WeeklySend.grades){const b=el('button',grade);b.setAttribute('aria-pressed',String(selected===grade));b.onclick=()=>{selected=grade;other.hidden=grade!=='Other';save.disabled=false;for(const n of choices.querySelectorAll('button'))n.setAttribute('aria-pressed',String(n===b));};choices.append(b);}
+ const label=el('label','Where was it?'),context=el('select');for(const name of ['Not specified','Bouldering gym','Training board','Outdoors','Other']){const o=el('option',name);context.append(o);}context.value=prior.context||'Not specified';label.append(context);dialog.append(choices,other,label);
+ save.onclick=()=>{const next={...state,weeklySends:{...(state.weeklySends||{}),[key]:{grade:selected,context:context.value,detail:other.value,recorded:localDate()}}};if(persist(next)){dialog.close();render();}};
+ const later=el('button','Not now');later.onclick=()=>dialog.close();dialog.append(save,later);dialog.onclose=()=>dialog.remove();document.body.append(dialog);dialog.showModal();
+}
+function maybeAskWeeklySend(id){if(WeeklySend.eligible(state,PROGRAM,localDate(),id))askWeeklySend();}
+</script><script>'use strict';
+let chosenSession=null;
+let preflightIndex=0;
+let trainingClock=null;
+const entryQuestions=[['fatigue','How fatigued do you feel?','0 fully fresh · 5 moderately tired · 10 exhausted'],['pain','How much finger pain do you have?','0 none · 5 moderate · 10 worst imaginable'],['stiffness','How stiff do your fingers feel?','0 none · 5 clearly restricted · 10 unable to move normally']];
+function flowKey(id){return trainingDate+':'+id;}
+function flowFor(id){return (state.sessionFlow||{})[flowKey(id)]||{};}
+function saveFlow(id,patch){return persist({...state,sessionFlow:{...(state.sessionFlow||{}),[flowKey(id)]:{...flowFor(id),...patch}}});}
+function pickWeekSession(){
+ const cfg=calendarSettings(),today=localDate(),ctx=Planning.context(today,cfg.start,cfg.days),start=TrainingTime.dateAt(cfg,Math.max(0,ctx.week-1)*7);
+ const dialog=el('dialog',undefined,'rpe-dialog');dialog.append(el('h2','Choose your session this week'));
+ const rows=PROGRAM.sessions.filter(s=>s.id!=='C'||state.profile.availability!=='2').map(s=>({s,date:Planning.sessionDate(start,cfg.days[s.id])})).sort((a,b)=>a.date.localeCompare(b.date));
+ for(const{s,date}of rows){const b=el('button','session-'+Planning.sessionNumber(s.id,cfg.start,cfg.days)+' · '+s.title+' · '+prettyDate(date),'session-choice');b.onclick=()=>{chosenSession=s.id;preflightIndex=0;dialog.close();renderSessions();};dialog.append(b);}
+ const close=el('button','Cancel');close.onclick=()=>dialog.close();dialog.append(close);dialog.onclose=()=>dialog.remove();document.body.append(dialog);dialog.showModal();
+}
+function renderSessions(){
+ clearInterval(trainingClock);trainingClock=null;clearInterval(exerciseClock);
+ trainingDate=localDate();const host=$('#sessions');host.replaceChildren();$('#log-form').closest('article').hidden=true;
+ const cfg=calendarSettings(),ctx=Planning.context(trainingDate,cfg.start,cfg.days),id=chosenSession||ctx.id;
+ const baseSession=PROGRAM.sessions.find(s=>s.id===id&&(s.id!=='C'||state.profile.availability!=='2'));
+ const s=baseSession?Progression.prescribe(baseSession,ctx.week,state,trainingDate+':'+baseSession.id):null;
+ if(ctx.pause){const away=el('div',undefined,'day-intro');away.append(el('h1',ctx.pause.title||'Training pause'),el('p','No sessions are scheduled from '+prettyDate(ctx.pause.start)+' to '+prettyDate(ctx.pause.end)+'. Trip climbing is not logged day by day; the training calendar resumes on '+prettyDate(Planning.addDays(ctx.pause.end,1))+'.'));host.append(away);landingProgress(host);return;}
+ const header=el('div',undefined,'session-meta');const pick=el('button',s?'wk-'+ctx.week+'-session-'+Planning.sessionNumber(s.id,cfg.start,cfg.days):'wk-'+ctx.week+' · choose session','session-code');pick.onclick=pickWeekSession;header.append(el('span',prettyDate(trainingDate)),pick);host.append(header);
+ const monthly=LoadCaps.summary(state,cfg,trainingDate);if(monthly.overLimit)host.append(el('p','Your recorded four-week load is above the 10% increase ceiling. Stop adding load and review this block.','symptom-advice'));
+ if(!s){const rest=el('div',undefined,'day-intro');rest.append(el('h1','Rest day'),el('p','No session is planned today. Use the session code above if you want to train another session from this week.'));host.append(rest);landingProgress(host);return;}
+ const status=ctx.week>0?Progression.blockStatus(state,cfg,trainingDate):{available:false,reason:'Your training block has not started yet.'};if(!status.available){host.append(el('h2',s.title),el('p',status.reason));landingProgress(host);return;}
+ const flow=flowFor(s.id);
+ if(flow.startedAt){const clock=el('p',Guided.timerText(Guided.elapsedMs(flow)),'training-clock');clock.setAttribute('aria-label','Elapsed training time');host.append(clock);if(!flow.endedAt&&flow.durationMs===undefined)trainingClock=setInterval(()=>{clock.textContent=Guided.timerText(Guided.elapsedMs(flowFor(s.id)));},1000);}
+ if(flow.stage==='finished'){
+  const summary=el('div',undefined,'day-intro');summary.append(el('h1','Session complete'),el('p',s.title),el('p','Your whole-session RPE: '+flow.wholeRpe+'/10 · '+flow.minutes+' minutes','muted'));
+  const review=el('button','Review exercises','primary');review.onclick=()=>{if(saveFlow(s.id,{stage:'exercises',prescription:Progression.prescribe(baseSession,ctx.week,state,flowKey(s.id))}))renderSessions();};summary.append(review);host.append(summary);landingProgress(host);return;
+ }
+ if(!flow.stage||flow.stage==='intro'){
+  const intro=el('div',undefined,'day-intro');intro.append(el('h1',s.title),el('p',s.aim),el('p',s.duration,'muted'));const start=el('button','Start training','start-training');start.onclick=()=>{if(saveFlow(s.id,{stage:'checkin',startedAt:Date.now()})){preflightIndex=0;renderSessions();}};intro.append(start);host.append(intro);landingProgress(host);return;
+ }
+ if(flow.wholeRpe===undefined){const quit=el('button','Quit session','quit-session');quit.onclick=()=>confirmQuitSession(s);host.append(quit);}else {const back=el('button','Back to summary');back.onclick=()=>{if(saveFlow(s.id,{stage:'finished'}))renderSessions();};host.append(back);}
+ if(flow.stage==='checkin'){
+  const[key,title,anchors]=entryQuestions[preflightIndex],report=((state.fingerReports||{})[flowKey(s.id)]||{}).before||{};
+  const value=key==='fatigue'?flow.fatigue:report[key],panel=el('div',undefined,'checkin-step');panel.append(el('p',(preflightIndex+1)+' of 3','muted'),el('h1',title));
+  panel.append(tapScale(title,value,10,n=>{let next={...state};if(key==='fatigue')next.sessionFlow={...(state.sessionFlow||{}),[flowKey(s.id)]:{...flow,fatigue:n}};else next.fingerReports={...(state.fingerReports||{}),[flowKey(s.id)]:{...((state.fingerReports||{})[flowKey(s.id)]||{}),before:{...report,[key]:n}}};if(persist(next)){if(preflightIndex<2){preflightIndex++;renderSessions();}else if(saveFlow(s.id,{stage:'exercises',prescription:Progression.prescribe(baseSession,ctx.week,state,flowKey(s.id))})){if(!showSymptomTrend())renderSessions();}}},anchors));
+  const buttons=el('div',undefined,'actions');if(preflightIndex>0){const back=el('button','Back');back.onclick=()=>{preflightIndex--;renderSessions();};buttons.append(back);}
+  panel.append(buttons);host.append(panel);return;
+ }
+ host.append(el('h2',s.title),el('p',s.progressionMessage,'progression-note'));
+ if(flow.fatigue>=7)host.append(el('p','You reported high fatigue. Consider reducing today’s work and keep movement controlled.','symptom-advice'));
+ s.steps.forEach(([name,dose,detail],i)=>{
+  const key=flowKey(s.id)+':'+i,done=!!(state.checklist||{})[key],skipped=(flow.skipped||[]).includes(i),row=el('div',undefined,'tick-box'+(done?' is-done':'')),label=el('div',undefined,'tick-label'),check=el('input');check.type='checkbox';check.checked=done;check.setAttribute('aria-label',name);
+  const text=el('span');text.append(el('strong',name),el('span',skipped?'Skipped':dose,'dose'));label.append(text);row.append(label);const completeControl=el('label',undefined,'exercise-complete');completeControl.append(check,el('span','Complete '+name,'sr-only'));row.append(completeControl);
+  const target=s.targetRpe[i];if(target)row.append(el('p','Target RPE '+target+'/10','target-rpe'));const actual=(state.exerciseRpe||{})[key];if(actual!==undefined)row.append(el('p','Your RPE '+actual+'/10','actual-rpe'));
+  row.append(el('p',detail,'exercise-instructions'));attachExerciseTimer(row,key,name,done,skipped);
+  if(name==='Finger edge lift'){const test=el('button',(state.fingerTests||{})[flowKey(s.id)+':4']?'Edit finger test':'Record finger test','finger-test-button');test.onclick=()=>askFingerTest(trainingDate);row.append(test);}
+  check.onchange=()=>{if(!check.checked){const checklist={...(state.checklist||{})},exerciseRpe={...(state.exerciseRpe||{})};delete checklist[key];delete exerciseRpe[key];if(persist({...state,checklist,exerciseRpe}))renderSessions();return;}if(target)askExerciseRpe(key,name,check);else askClimbingNotes(s,i,check);};
+  if(done){const edit=el('button',target?'Edit RPE':'Edit answers');edit.onclick=()=>target?askExerciseRpe(key,name):askClimbingNotes(s,i);row.append(edit);}
+  if(dose.startsWith('Optional')){const skip=el('button',skipped?'Include':'Skip','exercise-skip');skip.onclick=()=>{const indices=flowFor(s.id).skipped||[];if(saveFlow(s.id,{skipped:skipped?indices.filter(n=>n!==i):[...indices,i],exerciseTimers:{...(flowFor(s.id).exerciseTimers||{}),...(flowFor(s.id).exerciseTimers?.[i]?{[i]:Guided.freezeOne(flowFor(s.id).exerciseTimers[i])}:{})}})){renderSessions();afterExerciseComplete(key);}};row.append(skip);}
+  host.append(row);
+ });
+ runExerciseClocks();
+ const complete=Guided.complete(s,state.checklist||{},flow.skipped||[],flowKey(s.id));
+ if(complete){const finish=el('button',flow.wholeRpe===undefined?'Finish session':'Review session finish','primary');finish.onclick=()=>askSessionFinish(s);host.append(finish);}
+}
+function afterExerciseComplete(key){const id=key.split(':')[1],s=PROGRAM.sessions.find(s=>s.id===id),flow=flowFor(id);if(s&&Guided.complete(s,state.checklist||{},flow.skipped||[],flowKey(id))){const stopped=Guided.stopTimer(flow);if(stopped!==flow&&!saveFlow(id,stopped))return;clearInterval(trainingClock);trainingClock=null;renderSessions();if(flow.wholeRpe===undefined)askSessionFinish(s);}}
+
+function confirmQuitSession(s){
+ const key=flowKey(s.id),dialog=el('dialog',undefined,'rpe-dialog');
+ let quitAt;
+ function askSave(){quitAt=Date.now();dialog.replaceChildren(el('h2','Save partial session?'),el('p','Keep the elapsed time, completed exercises and answers you have recorded so far.'));
+  const yes=el('button','Yes, save partial session','primary'),no=el('button','No, discard this session');
+  const end=save=>{const next=Guided.quitSessionState(state,key,save,quitAt,s);if(!Coach.validBackup(next)){notice('Your session could not be ended. Please try again.');return;}if(persist(next)){clearInterval(trainingClock);trainingClock=null;preflightIndex=0;dialog.close();tab('train');render();}};
+  yes.onclick=()=>end(true);no.onclick=()=>end(false);dialog.append(yes,no);
+ }
+ dialog.append(el('h2','Quit this session?'),el('p','Are you sure you want to end your session early?'));const yes=el('button','Yes, quit'),no=el('button','No, keep training','primary');yes.onclick=askSave;no.onclick=()=>dialog.close();dialog.append(yes,no);dialog.onclose=()=>dialog.remove();document.body.append(dialog);dialog.showModal();
+}
+
+
+function landingProgress(host){const box=el('div',undefined,'landing-progress');box.append(el('h2','Your progress'));const stats=el('div',undefined,'stats');stats.id='stats';box.append(stats);const charts=el('div');charts.id='landing-charts';box.append(charts);const ctx=Planning.context(localDate(),calendarSettings().start,calendarSettings().days);const trip=TripReview.due(state,PROGRAM,localDate());if(trip){const t=el('button','After-trip questionnaire','block-review-button');t.onclick=()=>openTripReview(trip);box.append(t);}if(ctx.week>=4){const review=el('button','Review Assess & establish','block-review-button');review.onclick=openBlockReview;box.append(review);}if(Object.keys(state.weeklySends||{}).length){const send=el('button','Review hardest send this week');send.onclick=askWeeklySend;box.append(send);}const exportButton=el('button','Export week and send to coach','week-export-button');exportButton.onclick=offerWeekExport;box.append(exportButton);host.append(box);renderProgress();}
+
+
+</script><script>'use strict';
+const KEY=PROGRAM.app?.storageKey||'climbing-coach-berdorf-v1';document.title='Training'+(PROGRAM.goal?.location?' · '+PROGRAM.goal.location:'');
+const $=s=>document.querySelector(s);
+const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
+const localDate=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');};
+let state={schema:1,week:'1',profile:{name:PROGRAM.athlete.name,availability:'3',date:'',current:PROGRAM.athlete.current,access:PROGRAM.athlete.access||'',recovery:PROGRAM.athlete.ankle},beta:{moves:'',rests:'',links:''},logs:[]};
+let trainingDate=localDate();
+let writable=true;
+function notice(t){$('#notice').textContent=t;}
+// One-time reset requested after trying the interface; only this app's data is affected.
+const TEST_RESET=KEY+'-test-reset-20261023';
+try{
+ if(localStorage.getItem(TEST_RESET)!=='done'){
+  localStorage.removeItem(KEY);
+  localStorage.setItem(TEST_RESET,'done');
+ }
+}catch(e){notice('Your test data could not be cleared. Allow browser storage and refresh to try again.');}
+try{const raw=localStorage.getItem(KEY);if(raw){const saved=JSON.parse(raw);if(!Coach.validBackup(saved))throw Error('invalid');state=saved;}}catch(e){writable=false;notice('Saved data could not be read. It has not been overwritten. Import a valid backup to restore saving.');}
+// Update old placeholders without changing your own profile entries.
+const profileCopy={...state.profile};
+if(profileCopy.name==='Your climbing partner')profileCopy.name='';
+if(['Healed for climbing and bouldering (athlete report)','Healed for climbing and bouldering, as reported'].includes(profileCopy.recovery))profileCopy.recovery=PROGRAM.athlete.ankle;
+if(!profileCopy.current||/^Estimated current max(imum)? \S+; .*Sport level and endurance unknown\.$/.test(profileCopy.current))profileCopy.current=PROGRAM.athlete.current;
+state={...state,profile:profileCopy};
+const previousPlanVersion=state.planVersion;
+const previousCalendarAnchor=state.calendarAnchorVersion;
+state=Coach.migratePlan(state);
+if(writable&&(previousPlanVersion!==4||previousCalendarAnchor!==2)){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){notice('Plan updated in this view; saving failed. Export a backup before closing.');}}
+function persist(next){if(!writable){notice('Saving is paused to protect unreadable stored data. Import a valid backup to restore saving.');return false;}try{localStorage.setItem(KEY,JSON.stringify(next));state=next;notice('');return true;}catch(e){notice('Browser storage is unavailable or full. Your change was not saved. Copy your form values before closing.');return false;}}
+function tab(id){for(const s of document.querySelectorAll('main>section'))s.hidden=s.id!==id;for(const b of document.querySelectorAll('nav button')){if(b.dataset.tab===id)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');}window.scrollTo(0,0);}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+function renderProgress(){
+ const host=document.querySelector('#stats');if(!host)return;
+ const today=localDate(),cut=new Date(today+'T12:00:00');cut.setDate(cut.getDate()-6);
+ const recent=state.logs.filter(x=>x.date<=today&&new Date(x.date+'T12:00:00')>=cut);
+ host.replaceChildren();
+ for(const[value,label]of [[recent.length,'sessions · last 7 days'],[recent.reduce((sum,x)=>sum+x.minutes,0),'minutes · last 7 days'],[recent.reduce((sum,x)=>sum+(Number.isFinite(x.rpe)?x.minutes*x.rpe:0),0),'effort load · last 7 days']]){
+  const item=el('div',undefined,'stat');item.append(el('b',String(value)),el('span',label));host.append(item);
+ }
+ drawLandingCharts();
+}
+function fillForms(){for(const[k,v]of Object.entries(state.profile))$('#profile-form').elements[k].value=v;}
+function render(){renderSessions();renderProgress();renderTrackingHistory();fillForms();renderLogEffort();renderSchedule();}
+
+
+
+$('#log-form').elements.date.value=localDate();$('#log-form').elements.date.max=localDate();
+$('#log-form').onsubmit=e=>{e.preventDefault();const f=e.target,x=Object.fromEntries(new FormData(f));for(const k of['minutes','rpe','pain','ankle','enjoyment'])x[k]=Number(x[k]);x.id=String(Date.now())+'-'+Math.random().toString(36).slice(2);const next={...state,logs:[...state.logs,x]};if(!Coach.validBackup(next)||x.date>localDate()){notice('Check the session values and use today or an earlier date.');return;}if(persist(next)){f.reset();f.elements.date.value=localDate();renderLogEffort();render();}};
+$('#profile-form').onsubmit=e=>{e.preventDefault();const next={...state,profile:Object.fromEntries(new FormData(e.target))};if(Coach.validBackup(next)&&persist(next))render();};
+$('#export').onclick=()=>{shareOrDownload(fileStem()+localDate()+'.json',JSON.stringify(state,null,2),'Climbing Coach backup').then(()=>notice('Backup exported. It includes your training and health notes.'));};
+$('#import').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>8000000)throw Error('large');const next=JSON.parse(await file.text());if(!Coach.validBackup(next))throw Error('schema');if(confirm(`Replace current setup, route notes and ${state.logs.length} logs with this backup (${next.logs.length} logs)? Export first to keep current data.`)){const old=writable;writable=true;if(persist(Coach.migratePlan(next)))render();else writable=old;}}catch(err){notice('Invalid Climbing Coach backup. Current data has not changed.');}e.target.value='';};
+for(const session of PROGRAM.sessions){const label=el('label',session.title),select=el('select');select.name=session.id;['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].forEach((name,i)=>{const option=el('option',name);option.value=String(i);select.append(option);});label.append(select);$('#calendar-days').append(label);}
+$('#calendar-form').onsubmit=e=>{e.preventDefault();const fields=Object.fromEntries(new FormData(e.target)),calendar={start:fields.start,days:{A:Number(fields.A),B:Number(fields.B),C:Number(fields.C)}};if(!Planning.valid(calendar)){notice('Choose a valid start date and three different training days.');return;}if(persist({...state,calendar}))render();};
+render();
+
+
+
+
+
+
+
+
+
+
+
+</script><script>if(location.protocol==='https:'&&'serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');if(navigator.storage&&navigator.storage.persist)navigator.storage.persist();</script></body></html>
+
+
+
+
+
+
+
+
+
