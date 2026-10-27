@@ -522,7 +522,8 @@ function showSymptomTrend(){
   const unit=last.weightKg>0?'kg × reps':'reps × RPE',limit0=budget(state,calendar,date,key.slice(11),unit,key),limit=limit0&&limit0.missing&&introducible.includes(key.slice(11))?null:limit0,sessionKey=key.slice(0,12),pre=state.fingerReports?.[sessionKey]?.before||{},fatigue=state.sessionFlow?.[sessionKey]?.fatigue;
   const recovered=rows.slice(0,2).every(([k])=>{const after=state.fingerReports?.[k.slice(0,12)]?.after;return after?.pain===0&&after?.stiffness===0;});
   const good=recovered&&last.rpe<=8&&pre.pain===0&&pre.stiffness===0&&fatigue!==undefined&&fatigue<7&&!summary(state,calendar,date).overLimit&&(typeof SymptomTrends==='undefined'||!SymptomTrends.trends(state,date).length);
-  let weight=last.weightKg,reps=[...last.reps],total=reps.reduce((a,b)=>a+b,0);
+  // Main lifts keep their two work sets in build weeks, even after a session logged with one set.
+  let weight=last.weightKg,reps=['Bench press','Overhead press','Leg press'].includes(exercise)&&last.reps.length===1&&w!==4?[last.reps[0],last.reps[0]]:[...last.reps],total=reps.reduce((a,b)=>a+b,0);
   const planned=exercise==='Finger edge lift'?parseScheme((scheme||[])[w-1]):null,start=exercise==='Finger edge lift'?parseScheme((scheme||[])[0]):null;
   if(planned&&(w===4||w===1||good)){reps=planned;total=reps.reduce((a,b)=>a+b,0);if(w===3&&good&&prior&&prior.weightKg===last.weightKg&&last.weightKg>0&&prior.rpe<=8)weight=Math.round((weight+cfg.step)*100)/100;}
   else if(planned&&start){reps=start;total=reps.reduce((a,b)=>a+b,0);}
